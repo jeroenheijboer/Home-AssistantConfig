@@ -1,0 +1,4 @@
+  energy:
+    name: Opwekking
+    entities:
+      - sensor.energy_generation

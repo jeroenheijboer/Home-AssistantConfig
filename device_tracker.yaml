@@ -1,0 +1,4 @@
+#Device Trackers
+  - platform: fritz
+    host: 172.19.3.1
+    track_new_devices: no

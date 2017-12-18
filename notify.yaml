@@ -1,0 +1,6 @@
+- platform: ios
+  name: iPhone van Martin
+  target: !secret ios_target_iphonemartin
+- platform: telegram
+  name: telegrammartin
+  chat_id: !secret telegram_chat_id1

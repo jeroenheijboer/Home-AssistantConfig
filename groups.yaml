@@ -1,0 +1,29 @@
+### VIEWS ###
+energie_view:
+ view: yes
+ name: Energie
+ entities:
+ - group.zonnepanelen
+#graphs:
+#  name: Grafieken
+#  view: yes
+#  entities:
+#  - history_graph.opwekking
+### GROUPS ###
+zonnepanelen:
+ name: Zonnepanelen
+ entities:
+ - sensor.energy_consumption
+ - sensor.energy_generation
+ - sensor.power_consumption
+ - sensor.power_generation
+ - sensor.pvoutput
+roomba:
+ name: Stofzuiger
+ entities:
+ - sensor.roomba_battery
+ - sensor.roomba_capacity
+ - sensor.roomba_state
+ - switch.roomba_clean
+ - switch.roomba_dock
+ - switch.roomba_find

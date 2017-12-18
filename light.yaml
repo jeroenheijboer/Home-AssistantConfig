@@ -1,0 +1,7 @@
+  platform: limitlessled
+  bridges:
+    - host: 172.19.3.10
+      groups:
+      - number: 1
+        type: rgbww
+        name: Kast

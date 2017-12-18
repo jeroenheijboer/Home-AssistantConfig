@@ -1,0 +1,24 @@
+sensor.roomba_battery:
+ friendly_name: Batterij %
+ icon: mdi:battery-charging
+sensor.roomba_capacity:
+ friendly_name: Batterij Capaciteit
+ icon: mdi:battery-70
+sensor.roomba_state:
+ friendly_name: Status
+ icon: mdi:album
+sensor.power_consumption:
+ friendly_name: Using
+ hidden: true
+sensor.energy_consumption:
+ friendly_name: Used
+ hidden: true
+sensor.pvoutput:
+ friendly_name: Status
+ hidden: true
+sensor.power_generation:
+ friendly_name: Huidig
+ icon: mdi:weather-sunny
+sensor.energy_generation:
+ friendly_name: Opgewekt
+ icon: mdi:flash-circle

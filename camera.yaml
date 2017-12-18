@@ -1,0 +1,5 @@
+  - platform: foscam
+    ip: 172.19.3.7
+    username: !secret foscam_user
+    password: !secret foscam_password
+    name: Voordeur

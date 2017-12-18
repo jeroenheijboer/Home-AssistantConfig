@@ -1,0 +1,13 @@
+push_voordeur_telegram:
+ sequence:
+  - service: camera.snapshot
+    data:
+     entity_id: camera.voordeur
+     filename: '/tmp/snapshot.jpg'
+  - service: notify.telegrammartin
+    data:
+     message: 'Deurbel: Er is aangebeld!'
+     data:
+         photo: 
+           file: /tmp/snapshot.jpg
+           caption: Snapshot Voordeur
