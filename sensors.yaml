@@ -10,6 +10,7 @@
     scan_interval: 150
   - platform: template
     sensors:
+#Zonnepanelen
       power_consumption:
         value_template: '{% if is_state_attr("sensor.pvoutput", "power_consumption", "NaN") %}0{% else %}{{ states.sensor.pvoutput.attributes.power_consumption }}{% endif %}'
         friendly_name: 'Using'
@@ -27,4 +28,5 @@
         friendly_name: 'Generated'
         unit_of_measurement: 'kWh'
   - platform: thinkingcleaner
+
 

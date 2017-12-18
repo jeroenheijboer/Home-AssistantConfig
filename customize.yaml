@@ -22,3 +22,6 @@ sensor.power_generation:
 sensor.energy_generation:
  friendly_name: Opgewekt
  icon: mdi:flash-circle
+sensor.serial_sensor:
+ friendly_name: Waterverbruik
+ icon: water-pump

@@ -1,16 +1,52 @@
 ### VIEWS ###
-energie_view:
+default_view:
+ view: yes
+ entities:
+ - device_tracker.iphone_van_martin
+ - device_tracker.iphonevanilse2
+ - sensor.iphone_van_martin_battery_level
+ - sensor.iphone_van_martin_battery_state
+ - sensor.yr_symbol
+ - group.group_lampen
+
+view_energie:
  view: yes
  name: Energie
  entities:
- - group.zonnepanelen
-#graphs:
-#  name: Grafieken
-#  view: yes
-#  entities:
-#  - history_graph.opwekking
+ - group.group_zonnepanelen
+ - history_graph.opwekking
+
+view_water:
+ view: yes
+ name: Water
+ entities:
+ - group.group_water
+
+view_devices:
+ view: yes
+ name: Apparaten
+ entities:
+ - group.group_roomba
+
+view_audiovideo:
+ view: yes
+ name: Audio-Video
+ entities:
+ - group.group_audiovideo
+
 ### GROUPS ###
-zonnepanelen:
+
+group_cameras:
+ name: Camera
+ entities:
+ - camera.voordeur
+
+group_lampen:
+ name: Verlichting
+ entities:
+ - light.kast
+
+group_zonnepanelen:
  name: Zonnepanelen
  entities:
  - sensor.energy_consumption
@@ -18,7 +54,13 @@ zonnepanelen:
  - sensor.power_consumption
  - sensor.power_generation
  - sensor.pvoutput
-roomba:
+
+group_water:
+ name: Water
+ entities:
+ - sensor.serial_sensor
+
+group_roomba:
  name: Stofzuiger
  entities:
  - sensor.roomba_battery
@@ -27,3 +69,10 @@ roomba:
  - switch.roomba_clean
  - switch.roomba_dock
  - switch.roomba_find
+
+group_audiovideo:
+ name: Audio / Video
+ entities:
+ - media_player.denon_receiver
+ - media_player.samsung_7_series_49_ue49ks7000
+ - media_player.ziggo_mediabox
