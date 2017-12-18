@@ -1,16 +1,16 @@
-#  - platform: samsungtv
-#    host: 172.19.3.12
-#    port: 8001
-#    name: TV
-#    mac: d8:e0:e1:01:0c:ff
-  - platform: denonavr
-    host: 172.19.3.13
-    name: Denon Receiver
-    show_all_sources: False
-    timeout: 2
-    #zones:
-    #  - zone: Zone2
-    #    name:
-  - platform: ziggo_mediabox_xl
-    host: 172.19.3.24
-    name: Ziggo Mediabox
+- platform: samsungtv
+  host: 172.19.3.12
+  port: 8001
+  name: TV
+  mac: D8:E0:E1:01:0C:FF
+- platform: denonavr
+  host: 172.19.3.13
+  name: Denon Receiver
+  show_all_sources: False
+  timeout: 2
+  #zones:
+  #  - zone: Zone2
+  #    name:
+- platform: ziggo_mediabox_xl
+  host: 172.19.3.24
+  name: Ziggo Mediabox

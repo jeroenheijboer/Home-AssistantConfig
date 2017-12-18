@@ -25,3 +25,7 @@ sensor.energy_generation:
 sensor.serial_sensor:
  friendly_name: Waterverbruik
  icon: water-pump
+sensor.iphone_van_martin_battery_level:
+ friendly_name: Martin Batterij %
+sensor.iphone_van_martin_battery_state:
+ friendly_name: Martin Batterij Status
