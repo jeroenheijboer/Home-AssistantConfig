@@ -79,6 +79,10 @@ telegram_bot:
     allowed_chat_ids:
       - !secret telegram_chat_id1
 
+# Downloader component for grafana graphs
+downloader:
+  download_dir: downloads
+
 switch: !include switch.yaml
 camera: !include camera.yaml
 light: !include light.yaml

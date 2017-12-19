@@ -1,1 +1,8 @@
-[]
+- alias: Fetch graphs from grafana
+  initial_state: On
+  trigger:
+    platform: time
+    minutes: '/10'
+    seconds: '00'
+  action:
+    service: python_script.retrieve_grafana

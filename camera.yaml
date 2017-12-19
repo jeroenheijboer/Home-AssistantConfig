@@ -3,3 +3,9 @@
     username: !secret foscam_user
     password: !secret foscam_password
     name: Voordeur
+  - platform: local_file
+    name: Opgewekt
+    file_path: downloads/grafana_graphs/zonnepanelen_1_2
+  - platform: local_file
+    name: Huidig
+    file_path: downloads/grafana_graphs/zonnepanelen_1_1

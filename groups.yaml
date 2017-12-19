@@ -13,8 +13,9 @@ view_energie:
  view: yes
  name: Energie
  entities:
- - group.group_zonnepanelen
- - history_graph.opwekking
+  - group.group_zonnepanelen
+  - camera.Opgewekt
+  - camera.Huidig
 
 view_water:
  view: yes
@@ -33,6 +34,12 @@ view_audiovideo:
  name: Audio-Video
  entities:
  - group.group_audiovideo
+
+view_cameras:
+ view: yes
+ name: Camera
+ entities:
+ - group.group_cameras
 
 ### GROUPS ###
 
@@ -74,5 +81,5 @@ group_audiovideo:
  name: Audio / Video
  entities:
  - media_player.denon_receiver
- - media_player.samsung_7_series_49_ue49ks7000
+ - media_player.tv
  - media_player.ziggo_mediabox
