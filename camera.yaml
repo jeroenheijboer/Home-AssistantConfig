@@ -4,8 +4,14 @@
     password: !secret foscam_password
     name: Voordeur
   - platform: local_file
-    name: Opgewekt
-    file_path: downloads/grafana_graphs/zonnepanelen_1_2
+    name: Wattage Dag (kWh)
+    file_path: /home/pi/.homeassistant/downloads/grafana_graphs/zonnepanelen_1_1.png
   - platform: local_file
-    name: Huidig
-    file_path: downloads/grafana_graphs/zonnepanelen_1_1
+    name: Opwekking Dag (kWh)
+    file_path: /home/pi/.homeassistant/downloads/grafana_graphs/zonnepanelen_1_2.png
+  - platform: local_file
+    name: Opwekking Week (kWh)
+    file_path: /home/pi/.homeassistant/downloads/grafana_graphs/zonnepanelen_1_3.png
+  - platform: local_file
+    name: Opwekking Maand (kWh)
+    file_path: /home/pi/.homeassistant/downloads/grafana_graphs/zonnepanelen_1_4.png

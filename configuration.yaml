@@ -34,11 +34,13 @@ influxdb:
 #  include:
 #   domains:
 #   - sensor
-  exclude:
-   entities:
-   - sensor.energy_consumption
-   - sensor.power_consumption
-   - sensor.pvoutput
+#  exclude:
+#   entities:
+#   - sensor.energy_consumption
+#   - sensor.power_consumption
+#   - sensor.pvoutput
+#   - sensor.serial_sensor
+#   - sensor.yr_symbol
 
 http:
   # Secrets are defined in the file secrets.yaml
@@ -78,6 +80,9 @@ telegram_bot:
     api_key: !secret telegram_api
     allowed_chat_ids:
       - !secret telegram_chat_id1
+
+# Enable Python
+python_script:
 
 # Downloader component for grafana graphs
 downloader:
