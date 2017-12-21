@@ -14,8 +14,10 @@ view_energie:
  name: Energie
  entities:
   - group.group_zonnepanelen
-  - camera.Opgewekt
-  - camera.Huidig
+  - camera.Wattage_Dag
+  - camera.Opwekking_Dag
+  - camera.Opwekking_Week
+  - camera.Opwekking_Maand
 
 view_water:
  view: yes
@@ -40,6 +42,7 @@ view_cameras:
  name: Camera
  entities:
  - group.group_cameras
+ - camera.Voordeur_Snapshot_Latest
 
 ### GROUPS ###
 
