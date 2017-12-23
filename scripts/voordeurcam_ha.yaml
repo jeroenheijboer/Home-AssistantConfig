@@ -3,11 +3,11 @@ push_voordeur_ha:
   - service: camera.snapshot
     data:
      entity_id: camera.voordeur
-     filename: '/tmp/snapshot.jpg'
+     filename: '/home/pi/.homeassistant/downloads/camera_snapshots/voordeurcam.jpg'
   - service: notify.ios_iphone_van_martin
     data:
      message: 'Deurbel: Er is aangebeld!'
      data:
          attachment: 
-           url: http://voordeurcam.vd-meer.com:88/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=admin&pwd=whiskers
+           url: !secret foscam_snapshot_url
            content-type: jpeg

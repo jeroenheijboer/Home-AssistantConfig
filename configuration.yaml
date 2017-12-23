@@ -33,9 +33,15 @@ influxdb:
   host: 127.0.0.1
   include:
    entities:
-#   - sensor.energy_generation
-#   - sensor.power_generation
+   - sensor.energy_generation
+   - sensor.power_generation
    - sensor.iphone_van_martin_battery_level
+   - sensor.roomba_battery
+   - sensor.power_consumption_low
+   - sensor.power_consumption_normal
+   - sensor.power_production_low
+   - sensor.power_production_normal
+   - sensor.gas_consumption
 #  exclude:
 #   entities:
 #   - sensor.pvoutput

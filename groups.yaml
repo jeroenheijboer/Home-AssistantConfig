@@ -13,6 +13,8 @@ view_energie:
  view: yes
  name: Energie
  entities:
+  - group.group_meter_readings
+  - group.group_huidige_energie
   - group.group_zonnepanelen
   - camera.Wattage_Dag
   - camera.Opwekking_Dag
@@ -57,14 +59,25 @@ group_lampen:
  entities:
  - light.kast
 
+group_meter_readings:
+ name: Slimme Meter Standen
+ entities:
+ - sensor.power_consumption_low
+ - sensor.power_consumption_normal
+ - sensor.power_production_low
+ - sensor.power_production_normal
+ - sensor.gas_consumption
+
+group_huidige_energie:
+ name: Huidig verbruik
+ entities:
+ - sensor.stroom_tarief
+
 group_zonnepanelen:
  name: Zonnepanelen
  entities:
- - sensor.energy_consumption
  - sensor.energy_generation
- - sensor.power_consumption
  - sensor.power_generation
- - sensor.pvoutput
 
 group_water:
  name: Water

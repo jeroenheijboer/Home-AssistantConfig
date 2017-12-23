@@ -1,3 +1,5 @@
+sensor.yr_symbol:
+ friendly_name: Weer
 sensor.roomba_battery:
  friendly_name: Batterij %
  icon: mdi:battery-charging
@@ -32,8 +34,20 @@ sensor.iphone_van_martin_battery_state:
 sensor.cpu_used:
  friendly_name: CPU gebruik
 sensor.disk_free_:
- friendly_name: Disk Vrij
+ friendly_name: Disk beschikbaar
 sensor.last_boot:
  friendly_name: Laatste opstart
 sensor.ram_available:
  friendly_name: Geheugen beschikbaar
+sensor.power_consumption_low:
+ friendly_name: Stroomverbruik (Laag)
+sensor.power_consumption_normal:
+ friendly_name: Stroomverbruik (Normaal)
+sensor.power_production_low:
+ friendly_name: Teruglevering (Laag)
+sensor.power_production_normal:
+ friendly_name: Teruglevering (Normaal)
+sensor.gas_consumption:
+ friendly_name: Gasverbruik
+sensor.power_tariff:
+ friendly_name: Huidige tarief
