@@ -30,6 +30,7 @@ view_devices:
  name: Apparaten
  entities:
  - group.group_roomba
+ - group.group_machine_info
 
 view_audiovideo:
  view: yes
@@ -69,6 +70,7 @@ group_water:
  name: Water
  entities:
  - sensor.serial_sensor
+ - sensor.watersensor
 
 group_roomba:
  name: Stofzuiger
@@ -83,6 +85,15 @@ group_roomba:
 group_audiovideo:
  name: Audio / Video
  entities:
- - media_player.denon_receiver
  - media_player.tv
+ - media_player.denon_receiver
  - media_player.ziggo_mediabox
+ - media_player.spotify
+
+group_machine_info:
+ name: System Info
+ entities:
+ - sensor.disk_free_
+ - sensor.ram_available
+ - sensor.cpu_used
+ - sensor.last_boot

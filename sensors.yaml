@@ -11,14 +11,14 @@
   - platform: template
     sensors:
 #Zonnepanelen
-      power_consumption:
-        value_template: '{% if is_state_attr("sensor.pvoutput", "power_consumption", "NaN") %}0{% else %}{{ states.sensor.pvoutput.attributes.power_consumption }}{% endif %}'
-        friendly_name: 'Using'
-        unit_of_measurement: 'Watt'
-      energy_consumption:
-        value_template: '{{ "%0.1f"|format(states.sensor.pvoutput.attributes.energy_consumption|float/1000) }}'
-        friendly_name: 'Used'
-        unit_of_measurement: 'kWh'
+#      power_consumption:
+#        value_template: '{% if is_state_attr("sensor.pvoutput", "power_consumption", "NaN") %}0{% else %}{{ states.sensor.pvoutput.attributes.power_consumption }}{% endif %}'
+#        friendly_name: 'Using'
+#        unit_of_measurement: 'Watt'
+#      energy_consumption:
+#        value_template: '{{ "%0.1f"|format(states.sensor.pvoutput.attributes.energy_consumption|float/1000) }}'
+#        friendly_name: 'Used'
+#        unit_of_measurement: 'kWh'
       power_generation:
         value_template: '{% if is_state_attr("sensor.pvoutput", "power_generation", "NaN") %}0{% else %}{{ states.sensor.pvoutput.attributes.power_generation }}{% endif %}'
         friendly_name: 'Generating'
@@ -27,6 +27,18 @@
         value_template: '{% if is_state_attr("sensor.pvoutput", "energy_generation", "NaN") %}0{% else %}{{ "%0.2f"|format(states.sensor.pvoutput.attributes.energy_generation|float/1000) }}{% endif %}'
         friendly_name: 'Generated'
         unit_of_measurement: 'kWh'
+#      watersensor:
+#        value_template: '{{ value.replace("M2:0:0:M3:0:0:M4:0:0:M5:0:0", "") }}'
+#        friendly_name: 'Waterverbruik'
+#        unit_of_measurement: 'Liters'
   - platform: thinkingcleaner
+#Monitor Pi System
+  - platform: systemmonitor
+    resources:
+      - type: disk_free
+        arg: /
+      - type: memory_free
+      - type: processor_use
+      - type: last_boot
 
 

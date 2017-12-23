@@ -29,3 +29,11 @@ sensor.iphone_van_martin_battery_level:
  friendly_name: Martin Batterij %
 sensor.iphone_van_martin_battery_state:
  friendly_name: Martin Batterij Status
+sensor.cpu_used:
+ friendly_name: CPU gebruik
+sensor.disk_free_:
+ friendly_name: Disk Vrij
+sensor.last_boot:
+ friendly_name: Laatste opstart
+sensor.ram_available:
+ friendly_name: Geheugen beschikbaar

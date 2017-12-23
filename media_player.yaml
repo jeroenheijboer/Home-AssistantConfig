@@ -14,3 +14,6 @@
 - platform: ziggo_mediabox_xl
   host: 172.19.3.24
   name: Ziggo Mediabox
+- platform: spotify
+  client_id: 9d9c685427e14c7fb0528b8085ceaaca
+  client_secret: 1059bc26ced84d9bab9cc5361f977572

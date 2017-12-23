@@ -31,13 +31,13 @@ ios:
 #Influx Database Support
 influxdb:
   host: 127.0.0.1
-#  include:
-#   domains:
-#   - sensor
+  include:
+   entities:
+#   - sensor.energy_generation
+#   - sensor.power_generation
+   - sensor.iphone_van_martin_battery_level
 #  exclude:
 #   entities:
-#   - sensor.energy_consumption
-#   - sensor.power_consumption
 #   - sensor.pvoutput
 #   - sensor.serial_sensor
 #   - sensor.yr_symbol
