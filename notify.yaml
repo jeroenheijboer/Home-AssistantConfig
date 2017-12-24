@@ -1,6 +1,14 @@
 - platform: ios
   name: iPhone van Martin
   target: !secret ios_target_iphonemartin
+- platform: ios
+  name: iPhone van Ilse
+  target: !secret ios_target_iphoneilse
 - platform: telegram
   name: telegrammartin
   chat_id: !secret telegram_chat_id1
+- platform: group
+  name: martinenilse
+  services:
+    - service: ios_iphone_van_martin
+    - service: ios_iphone_van_ilse

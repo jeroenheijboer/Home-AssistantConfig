@@ -4,7 +4,7 @@ push_voordeur_ha:
     data:
      entity_id: camera.voordeur
      filename: '/home/pi/.homeassistant/downloads/camera_snapshots/voordeurcam.jpg'
-  - service: notify.ios_iphone_van_martin
+  - service: notify.martinenilse
     data:
      message: 'Deurbel: Er is aangebeld!'
      data:

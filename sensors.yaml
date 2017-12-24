@@ -72,3 +72,11 @@
       - type: memory_free
       - type: processor_use
       - type: last_boot
+  - platform: command_line
+    name: log_db_file_size
+    command: "du -m /home/pi/.homeassistant/home-assistant_v2.db | cut -f1"
+    unit_of_measurement: 'MB'
+    value_template: '{{ value | int - 1 }}'
+  - platform: cert_expiry
+    host: homeassistant.vd-meer.com
+    port: 8123

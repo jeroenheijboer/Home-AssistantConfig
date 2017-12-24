@@ -6,3 +6,13 @@
     seconds: '00'
   action:
     service: python_script.retrieve_grafana
+- alias: Cert Expires
+  trigger:
+   platform: numeric_state
+   entity_id: sensor.ssl_certificate_expiry
+   below: 10
+  action:
+   service: notify.ios_iphone_van_martin
+   data_template:
+     title: "Home-Assistant Certificaat verloopt"
+     message: "Home Assistant Certificaat verloopt in  {{ states.sensor.ssl_certificate_expiry.state }} dagen"

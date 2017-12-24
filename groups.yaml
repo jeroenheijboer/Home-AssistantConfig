@@ -4,11 +4,12 @@ default_view:
  icon: mdi:home
  entities:
  - device_tracker.iphone_van_martin
- - device_tracker.iphonevanilse2
+ - device_tracker.iphone_van_ilse
  - sensor.iphone_van_martin_battery_level
- - sensor.iphone_van_martin_battery_state
+ - sensor.iphone_van_ilse_battery_level
  - sensor.yr_symbol
  - group.group_lampen
+ - sun.sun
 
 view_energie:
  view: yes
@@ -131,3 +132,5 @@ group_machine_info:
  - sensor.ram_available
  - sensor.cpu_used
  - sensor.last_boot
+ - sensor.log_db_file_size
+ - sensor.ssl_certificate_expiry

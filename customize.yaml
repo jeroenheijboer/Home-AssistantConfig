@@ -26,11 +26,15 @@ sensor.energy_generation:
   icon: mdi:flash-circle
 sensor.serial_sensor:
   friendly_name: Waterverbruik
-  icon: water-pump
+  icon: mdi:water-pump
 sensor.iphone_van_martin_battery_level:
   friendly_name: Martin Batterij %
 sensor.iphone_van_martin_battery_state:
   friendly_name: Martin Batterij Status
+sensor.iphone_van_ilse_battery_level:
+  friendly_name: Ilse Batterij %
+sensor.iphone_van_ilse_battery_state:
+  friendly_name: Ilse Batterij Status
 sensor.cpu_used:
   friendly_name: CPU gebruik
 sensor.disk_free_:
@@ -51,3 +55,9 @@ sensor.gas_consumption:
   friendly_name: Gasverbruik
 sensor.power_tariff:
   friendly_name: Huidige tarief
+sensor.ssl_certificate_expiry:
+  friendly_name: SSL Vervalt
+  icon: mdi:certificate
+sensor.log_db_file_size:
+  friendly_name: HA Log Database
+  icon: mdi:database
