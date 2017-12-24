@@ -61,3 +61,47 @@ sensor.ssl_certificate_expiry:
 sensor.log_db_file_size:
   friendly_name: HA Log Database
   icon: mdi:database
+
+# Buienradar
+sensor.br_ground_temperature:
+  friendly_name: Grond temperatuur
+sensor.br_humidity:
+  friendly_name: Luchtvochtigheid
+sensor.br_irradiance:
+  friendly_name: Zonintensiteit
+sensor.br_precipitation:
+  friendly_name: Neerslag verwacht
+sensor.br_precipitation_forecast_average:
+  friendly_name: Neerslag gem. verwacht
+sensor.br_precipitation_forecast_total:
+  friendly_name: Neerslag totaal verwacht
+sensor.br_pressure:
+  friendly_name: Luchtdruk
+sensor.br_stationname:
+  friendly_name: Weerstation
+sensor.br_symbol:
+  friendly_name: Weer
+sensor.br_temperature:
+  friendly_name: Temperatuur
+sensor.br_visibility:
+  friendly_name: Zicht
+sensor.br_wind_direction:
+  friendly_name: Wind richting
+sensor.br_wind_direction_azimuth:
+  friendly_name: Wind richting (graden)
+sensor.br_wind_force:
+  friendly_name: Windkracht
+sensor.br_wind_gust:
+  friendly_name: Windstoten
+sensor.br_wind_speed:
+  friendly_name: Windsnelheid
+
+# Buienradar Voorspelling
+sensor.br_symbol_1d:
+  friendly_name: Voorspelling
+sensor.br_temperature_1d:
+  friendly_name: Temperatuur 1 dag
+sensor.br_rainchance_1d:
+  friendly_name: Regenkans 1 dag
+sensor.br_rain_1d:
+  friendly_name: Regen 1 dag

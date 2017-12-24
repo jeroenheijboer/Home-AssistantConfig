@@ -30,6 +30,14 @@ view_water:
  entities:
  - group.group_water
 
+view_buienradar:
+ view: yes
+ name: Weer
+ icon: mdi:weather-partlycloudy
+ entities:
+ - group.group_buienradar
+ - group.group_buienradar_forecast
+
 view_grafieken:
  view: yes
  name: Grafieken
@@ -134,3 +142,31 @@ group_machine_info:
  - sensor.last_boot
  - sensor.log_db_file_size
  - sensor.ssl_certificate_expiry
+
+group_buienradar:
+ name: Weer
+ entities: 
+ - sensor.br_stationname
+ - sensor.br_symbol
+ - sensor.br_temperature
+ - sensor.br_ground_temperature
+ - sensor.br_humidity
+ - sensor.br_pressure
+ - sensor.br_wind_speed
+ - sensor.br_wind_gust
+ - sensor.br_wind_force
+ - sensor.br_wind_direction
+ - sensor.br_wind_direction_azimuth
+ - sensor.br_precipitation
+ - sensor.br_precipitation_forecast_average
+ - sensor.br_precipitation_forecast_total
+ - sensor.br_visibility
+ - sensor.br_irradiance
+
+group_buienradar_forecast:
+ name: Weersvoorspelling
+ entities: 
+ - sensor.br_symbol_1d
+ - sensor.br_temperature_1d
+ - sensor.br_rainchance_1d
+ - sensor.br_rain_1d

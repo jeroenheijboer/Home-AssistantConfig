@@ -80,3 +80,27 @@
   - platform: cert_expiry
     host: homeassistant.vd-meer.com
     port: 8123
+# Buienradar
+  - platform: buienradar
+    monitored_conditions:
+      - stationname
+      - symbol
+      - humidity
+      - temperature
+      - groundtemperature
+      - windspeed
+      - windforce
+      - winddirection
+      - windazimuth
+      - pressure
+      - visibility
+      - windgust
+      - precipitation
+      - irradiance
+      - precipitation_forecast_average
+      - precipitation_forecast_total
+      # Forecast
+      - symbol_1d
+      - temperature_1d
+      - rainchance_1d
+      - rain_1d
