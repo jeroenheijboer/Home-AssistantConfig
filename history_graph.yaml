@@ -2,3 +2,12 @@
     name: Opwekking
     entities:
       - sensor.energy_generation
+  gas_today:
+    name: Gas Vandaag
+    entities:
+      - sensor.hourly_gas_consumption
+  gas_week:
+    name: Gas Week
+    entities:
+      - sensor.hourly_gas_consumption
+    hours_to_show: 168

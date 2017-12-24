@@ -16,5 +16,5 @@
     name: Opwekking_Maand
     file_path: /home/pi/.homeassistant/downloads/grafana_graphs/zonnepanelen_1_4.png
   - platform: local_file
-    name: Voordeur_Snapshot_Latest
-    file_path: /tmp/snapshot.jpg
+    name: Voordeur Laatste Snapshot
+    file_path: /home/pi/.homeassistant/downloads/camera_snapshots/voordeurcam.jpg

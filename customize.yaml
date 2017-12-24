@@ -1,53 +1,53 @@
 sensor.yr_symbol:
- friendly_name: Weer
+  friendly_name: Weer
 sensor.roomba_battery:
- friendly_name: Batterij %
- icon: mdi:battery-charging
+  friendly_name: Batterij %
+  icon: mdi:battery-charging
 sensor.roomba_capacity:
- friendly_name: Batterij Capaciteit
- icon: mdi:battery-70
+  friendly_name: Batterij Capaciteit
+  icon: mdi:battery-70
 sensor.roomba_state:
- friendly_name: Status
- icon: mdi:album
+  friendly_name: Status
+  icon: mdi:album
 sensor.power_consumption:
- friendly_name: Using
- hidden: true
+  friendly_name: Using
+  hidden: true
 sensor.energy_consumption:
- friendly_name: Used
- hidden: true
+  friendly_name: Used
+  hidden: true
 sensor.pvoutput:
- friendly_name: Status
- hidden: true
+  friendly_name: Status
+  hidden: true
 sensor.power_generation:
- friendly_name: Huidig
- icon: mdi:weather-sunny
+  friendly_name: Huidig
+  icon: mdi:weather-sunny
 sensor.energy_generation:
- friendly_name: Opgewekt
- icon: mdi:flash-circle
+  friendly_name: Opgewekt
+  icon: mdi:flash-circle
 sensor.serial_sensor:
- friendly_name: Waterverbruik
- icon: water-pump
+  friendly_name: Waterverbruik
+  icon: water-pump
 sensor.iphone_van_martin_battery_level:
- friendly_name: Martin Batterij %
+  friendly_name: Martin Batterij %
 sensor.iphone_van_martin_battery_state:
- friendly_name: Martin Batterij Status
+  friendly_name: Martin Batterij Status
 sensor.cpu_used:
- friendly_name: CPU gebruik
+  friendly_name: CPU gebruik
 sensor.disk_free_:
- friendly_name: Disk beschikbaar
+  friendly_name: Disk beschikbaar
 sensor.last_boot:
- friendly_name: Laatste opstart
+  friendly_name: Laatste opstart
 sensor.ram_available:
- friendly_name: Geheugen beschikbaar
+  friendly_name: Geheugen beschikbaar
 sensor.power_consumption_low:
- friendly_name: Stroomverbruik (Laag)
+  friendly_name: Stroomverbruik (Laag)
 sensor.power_consumption_normal:
- friendly_name: Stroomverbruik (Normaal)
+  friendly_name: Stroomverbruik (Normaal)
 sensor.power_production_low:
- friendly_name: Teruglevering (Laag)
+  friendly_name: Teruglevering (Laag)
 sensor.power_production_normal:
- friendly_name: Teruglevering (Normaal)
+  friendly_name: Teruglevering (Normaal)
 sensor.gas_consumption:
- friendly_name: Gasverbruik
+  friendly_name: Gasverbruik
 sensor.power_tariff:
- friendly_name: Huidige tarief
+  friendly_name: Huidige tarief
