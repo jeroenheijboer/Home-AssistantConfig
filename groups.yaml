@@ -140,7 +140,8 @@ group_machine_info:
  - sensor.ram_available
  - sensor.cpu_used
  - sensor.last_boot
- - sensor.log_db_file_size
+ - sensor.ha_internal_dbsize
+ - sensor.ha_recorder_dbsize
  - sensor.ssl_certificate_expiry
 
 group_buienradar:

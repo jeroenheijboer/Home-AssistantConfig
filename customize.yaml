@@ -58,8 +58,11 @@ sensor.power_tariff:
 sensor.ssl_certificate_expiry:
   friendly_name: SSL Vervalt
   icon: mdi:certificate
-sensor.log_db_file_size:
-  friendly_name: HA Log Database
+sensor.ha_internal_dbsize:
+  friendly_name: HA Internal Database
+  icon: mdi:database
+sensor.ha_recorder_dbsize:
+  friendly_name: HA Recorder Database
   icon: mdi:database
 
 # Buienradar

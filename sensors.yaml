@@ -73,10 +73,15 @@
       - type: processor_use
       - type: last_boot
   - platform: command_line
-    name: log_db_file_size
+    name: ha_internal_dbsize
     command: "du -m /home/pi/.homeassistant/home-assistant_v2.db | cut -f1"
     unit_of_measurement: 'MB'
     value_template: '{{ value | int - 1 }}'
+  - platform: command_line
+    command: /home/pi/.homeassistant/scripts/check_mysql_dbsize.sh
+    name: ha_recorder_dbsize
+    unit_of_measurement: "MB"
+    scan_interval: 300
   - platform: cert_expiry
     host: homeassistant.vd-meer.com
     port: 8123
