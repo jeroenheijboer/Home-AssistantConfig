@@ -9,9 +9,6 @@ sensor.roomba_capacity:
 sensor.roomba_state:
   friendly_name: Status
   icon: mdi:album
-sensor.power_consumption:
-  friendly_name: Using
-  hidden: true
 sensor.energy_consumption:
   friendly_name: Used
   hidden: true
@@ -19,10 +16,10 @@ sensor.pvoutput:
   friendly_name: Status
   hidden: true
 sensor.power_generation:
-  friendly_name: Huidig
+  friendly_name: Zonnepanelen Huidig
   icon: mdi:weather-sunny
 sensor.energy_generation:
-  friendly_name: Opgewekt
+  friendly_name: Zonnepanelen Opgewekt
   icon: mdi:flash-circle
 sensor.serial_sensor:
   friendly_name: Waterverbruik
@@ -53,6 +50,11 @@ sensor.power_production_normal:
   friendly_name: Teruglevering (Normaal)
 sensor.gas_consumption:
   friendly_name: Gasverbruik
+sensor.hourly_gas_consumption:
+  friendly_name: Gasverbruik (per uur)
+sensor.power_consumption:
+  friendly_name: Stroomverbruik
+  hidden: false
 sensor.power_tariff:
   friendly_name: Huidige tarief
 sensor.ssl_certificate_expiry:

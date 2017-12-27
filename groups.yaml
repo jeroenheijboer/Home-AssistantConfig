@@ -16,8 +16,9 @@ view_energie:
  icon: mdi:power-plug
  name: Energie
  entities:
-  - group.group_meter_readings
+  - group.group_huidig_verbruik
   - group.group_zonnepanelen
+  - group.group_meter_readings
 #  - camera.Wattage_Dag
 #  - camera.Opwekking_Dag
 #  - camera.Opwekking_Week
@@ -35,6 +36,7 @@ view_buienradar:
  name: Weer
  icon: mdi:weather-partlycloudy
  entities:
+ - camera.buienradar
  - group.group_buienradar
  - group.group_buienradar_forecast
 
@@ -44,6 +46,7 @@ view_grafieken:
  icon: mdi:speedometer
  entities:
   - group.group_grafiek_gas
+  - group.group_grafiek_energie
   - history_graph.opwekking
 
 view_devices:
@@ -97,6 +100,12 @@ group_meter_readings:
  - sensor.gas_consumption
  - sensor.stroom_tarief
 
+group_huidig_verbruik:
+ name: Actuele verbruik
+ entities:
+ - sensor.power_consumption
+ - sensor.hourly_gas_consumption
+
 group_zonnepanelen:
  name: Zonnepanelen
  entities:
@@ -108,6 +117,12 @@ group_grafiek_gas:
  entities:
   - history_graph.gas_vandaag
   - history_graph.gas_week
+
+group_grafiek_energie:
+ name: Energieverbruik
+ entities:
+  - history_graph.energie_vandaag
+  - history_graph.energie_week
 
 group_water:
  name: Water

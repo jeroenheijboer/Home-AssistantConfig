@@ -66,6 +66,8 @@
   - platform: thinkingcleaner
 #Monitor Pi System
   - platform: systemmonitor
+    scan_interval:
+     minutes: 30
     resources:
       - type: disk_free
         arg: /
@@ -74,19 +76,26 @@
       - type: last_boot
   - platform: command_line
     name: ha_internal_dbsize
+    scan_interval:
+     minutes: 1440
     command: "du -m /home/pi/.homeassistant/home-assistant_v2.db | cut -f1"
     unit_of_measurement: 'MB'
     value_template: '{{ value | int - 1 }}'
   - platform: command_line
-    command: /home/pi/.homeassistant/scripts/check_mysql_dbsize.sh
     name: ha_recorder_dbsize
+    scan_interval:
+     minutes: 1440
+    command: /home/pi/.homeassistant/scripts/check_mysql_dbsize.sh
     unit_of_measurement: "MB"
-    scan_interval: 300
   - platform: cert_expiry
+    scan_interval:
+     minutes: 1440
     host: homeassistant.vd-meer.com
     port: 8123
 # Buienradar
   - platform: buienradar
+    latitude: !secret latitude
+    longitude: !secret longitude
     monitored_conditions:
       - stationname
       - symbol
