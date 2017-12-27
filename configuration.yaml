@@ -28,6 +28,7 @@ conversation:
 map:
 tts:
   - platform: google
+    language: 'nl'
 
 #influxdb:
 #  host: 127.0.0.1
@@ -71,3 +72,4 @@ recorder: !include recorder.yaml
 script: !include_dir_merge_named scripts
 sensor: !include sensors.yaml
 switch: !include switch.yaml
+zone: !include zone.yaml

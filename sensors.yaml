@@ -17,7 +17,7 @@
 #      power_consumption:
 #        value_template: '{% if is_state_attr("sensor.pvoutput", "power_consumption", "NaN") %}0{% else %}{{ states.sensor.pvoutput.attributes.power_consumption }}{% endif %}'
 #        friendly_name: 'Using'
-#        unit_of_measurement: 'Watt'
+#        unit_of_measurement: 'W'
 #      energy_consumption:
 #        value_template: '{{ "%0.1f"|format(states.sensor.pvoutput.attributes.energy_consumption|float/1000) }}'
 #        friendly_name: 'Used'
@@ -25,7 +25,7 @@
       power_generation:
         value_template: '{% if is_state_attr("sensor.pvoutput", "power_generation", "NaN") %}0{% else %}{{ states.sensor.pvoutput.attributes.power_generation }}{% endif %}'
         friendly_name: 'Generating'
-        unit_of_measurement: 'Watt'
+        unit_of_measurement: 'W'
       energy_generation:
         value_template: '{% if is_state_attr("sensor.pvoutput", "energy_generation", "NaN") %}0{% else %}{{ "%0.2f"|format(states.sensor.pvoutput.attributes.energy_generation|float/1000) }}{% endif %}'
         friendly_name: 'Generated'
@@ -62,6 +62,27 @@
           {% else %}
             Normaal
           {% endif %}
+# Netto Energie verbruik
+      energie_netto_verbruik:
+        friendly_name: Netto energie verbruik
+        value_template: >
+          {%  if states.sensor.power_consumption.state and states.sensor.power_generation.state != "unknown" %}
+          {{ (states.sensor.power_consumption.state | float * 1000) - states.sensor.power_generation.state | float }}
+          {% else %}
+          "unknown"
+          {% endif %}
+        unit_of_measurement: 'Watt'
+# Energie verbruik in Watt
+      energie_stroom_verbruik:
+        friendly_name: Stroom verbruik
+        value_template: >
+          {%  if states.sensor.power_consumption.state != "unknown" %}
+          {{ states.sensor.power_consumption.state | float * 1000 }}
+          {% else %}
+          "unknown"
+          {% endif %}
+        unit_of_measurement: 'Watt'
+
 # Roomba Thinking Cleaner
   - platform: thinkingcleaner
 #Monitor Pi System
@@ -94,8 +115,8 @@
     port: 8123
 # Buienradar
   - platform: buienradar
-    latitude: !secret latitude
-    longitude: !secret longitude
+    latitude: !secret buienradar_latitude
+    longitude: !secret buienradar_longitude
     monitored_conditions:
       - stationname
       - symbol
@@ -111,10 +132,17 @@
       - windgust
       - precipitation
       - irradiance
+      # Forecast
       - precipitation_forecast_average
       - precipitation_forecast_total
-      # Forecast
       - symbol_1d
       - temperature_1d
       - rainchance_1d
       - rain_1d
+  - platform: google_travel_time
+    api_key: !secret google_travel_time_api_key
+    origin: zone.home
+    destination: zone.work
+    name: Travel time to work
+    options:
+     arrival_time: '08:15:00'

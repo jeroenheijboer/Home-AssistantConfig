@@ -52,11 +52,16 @@ sensor.gas_consumption:
   friendly_name: Gasverbruik
 sensor.hourly_gas_consumption:
   friendly_name: Gasverbruik (per uur)
-sensor.power_consumption:
+sensor.energie_stroom_verbruik:
   friendly_name: Stroomverbruik
+  icon: mdi:flash
   hidden: false
+sensor.energie_netto_verbruik:
+  friendly_name: Stroomverbruik (Netto)
+  icon: mdi:flash-outline
 sensor.power_tariff:
   friendly_name: Huidige tarief
+  icon: mdi:format-vertical-align-center
 sensor.ssl_certificate_expiry:
   friendly_name: SSL Vervalt
   icon: mdi:certificate
@@ -74,12 +79,6 @@ sensor.br_humidity:
   friendly_name: Luchtvochtigheid
 sensor.br_irradiance:
   friendly_name: Zonintensiteit
-sensor.br_precipitation:
-  friendly_name: Neerslag verwacht
-sensor.br_precipitation_forecast_average:
-  friendly_name: Neerslag gem. verwacht
-sensor.br_precipitation_forecast_total:
-  friendly_name: Neerslag totaal verwacht
 sensor.br_pressure:
   friendly_name: Luchtdruk
 sensor.br_stationname:
@@ -102,6 +101,12 @@ sensor.br_wind_speed:
   friendly_name: Windsnelheid
 
 # Buienradar Voorspelling
+sensor.br_precipitation:
+  friendly_name: Neerslag verwacht
+sensor.br_precipitation_forecast_average:
+  friendly_name: Neerslag gem. verwacht
+sensor.br_precipitation_forecast_total:
+  friendly_name: Neerslag totaal verwacht
 sensor.br_symbol_1d:
   friendly_name: Voorspelling
 sensor.br_temperature_1d:

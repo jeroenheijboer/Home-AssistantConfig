@@ -3,9 +3,10 @@
     entities:
       - sensor.energy_generation
   energie_vandaag:
-   name: Energie Vandaag
+   name: Energie vandaag
    entities:
-     - sensor.power_consumption
+     - sensor.energie_stroom_verbruik
+     - sensor.power_generation
   energie_week:
    name: Energie Week
    entities:

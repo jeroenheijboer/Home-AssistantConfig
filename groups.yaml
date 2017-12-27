@@ -45,8 +45,8 @@ view_grafieken:
  name: Grafieken
  icon: mdi:speedometer
  entities:
-  - group.group_grafiek_gas
   - group.group_grafiek_energie
+  - group.group_grafiek_gas
   - history_graph.opwekking
 
 view_devices:
@@ -103,8 +103,9 @@ group_meter_readings:
 group_huidig_verbruik:
  name: Actuele verbruik
  entities:
- - sensor.power_consumption
+ - sensor.energie_stroom_verbruik
  - sensor.hourly_gas_consumption
+ - sensor.energie_netto_verbruik
 
 group_zonnepanelen:
  name: Zonnepanelen
@@ -182,6 +183,8 @@ group_buienradar:
 group_buienradar_forecast:
  name: Weersvoorspelling
  entities: 
+ - sensor.br_precipitation_forecast_average
+ - sensor.br_precipitation_forecast_total
  - sensor.br_symbol_1d
  - sensor.br_temperature_1d
  - sensor.br_rainchance_1d
