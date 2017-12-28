@@ -9,6 +9,7 @@ default_view:
  - sensor.iphone_van_ilse_battery_level
  - sensor.yr_symbol
  - group.group_lampen
+ - group.group_xiaomi_gateway
  - sun.sun
 
 view_energie:
@@ -89,6 +90,17 @@ group_lampen:
  name: Verlichting
  entities:
  - light.kast
+ - light.gateway_light_7811dcb23274
+
+group_xiaomi_gateway:
+ name: Xiaomi Gateway
+ entities:
+ - input_boolean.mute_gateway_sounds
+ - input_number.gateway_volume
+ - input_select.gateway_sound
+ - input_number.loop_delay
+ - script.play_sel_sound_single
+ - script.play_sel_sound
 
 group_meter_readings:
  name: Slimme Meter Standen

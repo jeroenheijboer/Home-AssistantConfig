@@ -1,0 +1,3 @@
+  mute_gateway_sounds:
+    name: Mute
+    icon: mdi:volume-off

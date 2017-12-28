@@ -102,16 +102,22 @@ sensor.br_wind_speed:
 
 # Buienradar Voorspelling
 sensor.br_precipitation:
-  friendly_name: Neerslag verwacht
+  friendly_name: Neerslag komende 60 min
 sensor.br_precipitation_forecast_average:
-  friendly_name: Neerslag gem. verwacht
+  friendly_name: Neerslag gem. komende 60 min
 sensor.br_precipitation_forecast_total:
   friendly_name: Neerslag totaal verwacht
 sensor.br_symbol_1d:
   friendly_name: Voorspelling
 sensor.br_temperature_1d:
-  friendly_name: Temperatuur 1 dag
+  friendly_name: Temperatuur Morgen
 sensor.br_rainchance_1d:
-  friendly_name: Regenkans 1 dag
+  friendly_name: Regenkans Morgen
 sensor.br_rain_1d:
-  friendly_name: Regen 1 dag
+  friendly_name: Regen Morgen
+
+# Xiaomi Gateway
+input_number.loop_delay:
+  friendly_name: Herhaal in (sec)
+input_number.gateway_volume:
+  friendly_name: Volume

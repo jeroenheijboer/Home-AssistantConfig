@@ -1,0 +1,16 @@
+### Input slider to control volume ###
+  gateway_volume:
+    name: Volume
+    initial: 10
+    min: 0
+    max: 100
+    step: 2
+    icon: mdi:volume-high
+### Input slider to control loop delay ###
+  loop_delay:
+    name: "Loop Delay"
+    initial: 1
+    min: 0
+    max: 15
+    step: 1
+    icon: mdi:loop

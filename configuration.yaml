@@ -30,30 +30,16 @@ tts:
   - platform: google
     language: 'nl'
 
-#influxdb:
-#  host: 127.0.0.1
-#  include:
-#   entities:
-#   - sensor.energy_generation
-#   - sensor.power_generation
-#   - sensor.iphone_van_martin_battery_level
-#   - sensor.roomba_battery
-#   - sensor.power_consumption_low
-#   - sensor.power_consumption_normal
-#   - sensor.power_production_low
-#   - sensor.power_production_normal
-#   - sensor.gas_consumption
-##  exclude:
-##  entities:
-##   - sensor.pvoutput
-##   - sensor.serial_sensor
-##   - sensor.yr_symbol
-
 telegram_bot:
   - platform: polling
     api_key: !secret telegram_api
     allowed_chat_ids:
       - !secret telegram_chat_id1
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    key: !secret xiaomi_gateway_key
 
 downloader:
   download_dir: downloads
@@ -64,6 +50,9 @@ device_tracker: !include device_tracker.yaml
 group: !include groups.yaml
 history: !include history.yaml
 history_graph: !include history_graph.yaml
+input_boolean: !include input_boolean.yaml
+input_number: !include input_number.yaml
+input_select: !include input_select.yaml
 light: !include light.yaml
 logbook: !include logbook.yaml
 media_player: !include media_player.yaml
