@@ -1,3 +1,9 @@
+# Light
+light.kast:
+  friendly_name: Kast
+  icon: mdi:palette
+
+# Sensoren
 sensor.yr_symbol:
   friendly_name: Weer
 sensor.roomba_battery:
@@ -121,3 +127,6 @@ input_number.loop_delay:
   friendly_name: Herhaal in (sec)
 input_number.gateway_volume:
   friendly_name: Volume
+light.gateway_light_7811dcb23274:
+  friendly_name: Xiaomi Gateway Lamp
+  icon: mdi:palette

@@ -9,7 +9,6 @@ default_view:
  - sensor.iphone_van_ilse_battery_level
  - sensor.yr_symbol
  - group.group_lampen
- - group.group_xiaomi_gateway
  - sun.sun
 
 view_energie:
@@ -56,6 +55,7 @@ view_devices:
  icon: mdi:dip-switch
  entities:
  - group.group_roomba
+ - group.group_xiaomi_gateway
 
 view_audiovideo:
  view: yes
@@ -88,12 +88,14 @@ group_cameras:
 
 group_lampen:
  name: Verlichting
+ control: hidden
  entities:
  - light.kast
  - light.gateway_light_7811dcb23274
 
 group_xiaomi_gateway:
  name: Xiaomi Gateway
+ control: hidden
  entities:
  - input_boolean.mute_gateway_sounds
  - input_number.gateway_volume
@@ -186,15 +188,13 @@ group_buienradar:
  - sensor.br_wind_force
  - sensor.br_wind_direction
  - sensor.br_wind_direction_azimuth
- - sensor.br_precipitation
- - sensor.br_precipitation_forecast_average
- - sensor.br_precipitation_forecast_total
  - sensor.br_visibility
  - sensor.br_irradiance
 
 group_buienradar_forecast:
  name: Weersvoorspelling
  entities: 
+ - sensor.br_precipitation
  - sensor.br_precipitation_forecast_average
  - sensor.br_precipitation_forecast_total
  - sensor.br_symbol_1d

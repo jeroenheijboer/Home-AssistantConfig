@@ -1,3 +1,4 @@
+#### Fetch th Grafana graphs to HA
 - alias: Fetch graphs from grafana
   initial_state: On
   trigger:
@@ -6,6 +7,8 @@
     seconds: '00'
   action:
     service: python_script.retrieve_grafana
+
+#### Check Certificate expiration for HA
 - alias: Cert Expires
   trigger:
    platform: numeric_state
@@ -16,3 +19,34 @@
    data_template:
      title: "Home-Assistant Certificaat verloopt"
      message: "Home Assistant Certificaat verloopt in  {{ states.sensor.ssl_certificate_expiry.state }} dagen"
+
+#### Welkom thuis Ilse
+#- alias: Welkom thuis Ilse
+#  trigger:
+#  - platform: state
+#    entity_id: device_tracker.iphone_van_ilse
+#    from: 'not_home'
+#    to: 'home'
+#  action:
+#  - service: tts.google_say
+#    entity_id: media_player.speaker_1
+#    data:
+#       message: 'Welkom thuis Ilse'
+
+# Notificatie Martin van Werk naar Huis
+- alias: Martin werk naar huis notificatie
+  trigger:
+    platform: state
+    entity_id: device_tracker.iphone_van_martin
+    from: 'work'
+    to: 'not_home'
+  condition:
+    - condition: time
+      after: '17:00:00'
+      before: '17:45:00'
+  action:
+    service: notify.ios_iphone_van_martin
+    data_template:
+      title: "Martin gaat van werken naar huis!"
+      message: >
+        en komt aan om {{ ( as_timestamp(now()) + (states("sensor.travel_time_martin_to_home") | int)  * 60 )  | timestamp_custom("%H:%M") }}.

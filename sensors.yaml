@@ -2,8 +2,8 @@
   - platform: serial
     serial_port: /dev/ttyACM0
 # Slimme meter DSMR
-  - platform: dsmr
-    port: /dev/ttyUSB0
+#  - platform: dsmr
+#    port: /dev/ttyUSB0
 # Weather prediction
   - platform: yr
 # PV Output
@@ -17,7 +17,7 @@
 #      power_consumption:
 #        value_template: '{% if is_state_attr("sensor.pvoutput", "power_consumption", "NaN") %}0{% else %}{{ states.sensor.pvoutput.attributes.power_consumption }}{% endif %}'
 #        friendly_name: 'Using'
-#        unit_of_measurement: 'W'
+#        unit_of_measurement: 'Watt'
 #      energy_consumption:
 #        value_template: '{{ "%0.1f"|format(states.sensor.pvoutput.attributes.energy_consumption|float/1000) }}'
 #        friendly_name: 'Used'
@@ -25,7 +25,7 @@
       power_generation:
         value_template: '{% if is_state_attr("sensor.pvoutput", "power_generation", "NaN") %}0{% else %}{{ states.sensor.pvoutput.attributes.power_generation }}{% endif %}'
         friendly_name: 'Generating'
-        unit_of_measurement: 'W'
+        unit_of_measurement: 'Watt'
       energy_generation:
         value_template: '{% if is_state_attr("sensor.pvoutput", "energy_generation", "NaN") %}0{% else %}{{ "%0.2f"|format(states.sensor.pvoutput.attributes.energy_generation|float/1000) }}{% endif %}'
         friendly_name: 'Generated'
@@ -143,6 +143,11 @@
     api_key: !secret google_travel_time_api_key
     origin: zone.home
     destination: zone.work
-    name: Travel time to work
+    name: Travel Time Home to Work
     options:
      arrival_time: '08:15:00'
+  - platform: google_travel_time
+    api_key: !secret google_travel_time_api_key
+    origin: device_tracker.iphone_van_martin
+    destination: zone.home
+    name: Travel Time Martin to Home

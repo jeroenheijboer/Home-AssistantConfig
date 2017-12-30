@@ -10,7 +10,7 @@
   energie_week:
    name: Energie Week
    entities:
-     - sensor.power_consumption
+     - sensor.energie_stroom_verbruik
    hours_to_show: 168
   gas_today:
     name: Gas Vandaag
