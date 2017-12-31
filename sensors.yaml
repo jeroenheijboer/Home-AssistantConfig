@@ -14,14 +14,14 @@
   - platform: template
     sensors:
 #Zonnepanelen
-#      power_consumption:
-#        value_template: '{% if is_state_attr("sensor.pvoutput", "power_consumption", "NaN") %}0{% else %}{{ states.sensor.pvoutput.attributes.power_consumption }}{% endif %}'
-#        friendly_name: 'Using'
-#        unit_of_measurement: 'Watt'
-#      energy_consumption:
-#        value_template: '{{ "%0.1f"|format(states.sensor.pvoutput.attributes.energy_consumption|float/1000) }}'
-#        friendly_name: 'Used'
-#        unit_of_measurement: 'kWh'
+      power_consumption:
+        value_template: '{% if is_state_attr("sensor.pvoutput", "power_consumption", "NaN") %}0{% else %}{{ states.sensor.pvoutput.attributes.power_consumption }}{% endif %}'
+        friendly_name: 'Using'
+        unit_of_measurement: 'Watt'
+      energy_consumption:
+        value_template: '{{ "%0.1f"|format(states.sensor.pvoutput.attributes.energy_consumption|float/1000) }}'
+        friendly_name: 'Used'
+        unit_of_measurement: 'kWh'
       power_generation:
         value_template: '{% if is_state_attr("sensor.pvoutput", "power_generation", "NaN") %}0{% else %}{{ states.sensor.pvoutput.attributes.power_generation }}{% endif %}'
         friendly_name: 'Generating'
@@ -30,6 +30,35 @@
         value_template: '{% if is_state_attr("sensor.pvoutput", "energy_generation", "NaN") %}0{% else %}{{ "%0.2f"|format(states.sensor.pvoutput.attributes.energy_generation|float/1000) }}{% endif %}'
         friendly_name: 'Generated'
         unit_of_measurement: 'kWh'
+# Netto Energie verbruik
+      energie_netto_verbruik:
+        friendly_name: Netto energie verbruik
+        value_template: >
+          {% if states.sensor.electricity_currently_delivered.state and states.sensor.power_generation.state != "unknown" %}
+          {{ (states.sensor.electricity_currently_delivered.state | float) - states.sensor.power_generation.state | float }}
+          {% else %}
+          "unknown"
+          {% endif %}
+        unit_of_measurement: 'Watt'
+# Power Tarief hernoemen
+#      stroom_tarief:
+#        friendly_name: "Huidig tarief"
+#        value_template: >-
+#          {% if is_state('sensor.power_tariff', 'low') %}
+#            Laag
+#          {% else %}
+#            Normaal
+#          {% endif %}
+# Energie verbruik in Watt
+#     energie_stroom_verbruik:
+#        friendly_name: Stroom verbruik
+#        value_template: >
+#          {%  if states.sensor.power_consumption.state != "unknown" %}
+#          {{ states.sensor.power_consumption.state | float * 1000 }}
+#          {% else %}
+#          "unknown"
+#          {% endif %}
+#       unit_of_measurement: 'Watt'
 # Water sensoren
 #      m1_pulse_count:
 #        value_template: '{{% set strtext = states("sensor.serial_sensor") %}{% set m1_pulse_count = ( strtext.split(':')[5]) %}}'
@@ -53,35 +82,6 @@
 #        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set m5_pulse_count = ( strtext.split(':')[17] ) %}'
 #      m5_value:
 #        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set m5_value = ( strtext.split(':')[18] ) %}'
-# Power Tarief hernoemen
-      stroom_tarief:
-        friendly_name: "Huidig tarief"
-        value_template: >-
-          {% if is_state('sensor.power_tariff', 'low') %}
-            Laag
-          {% else %}
-            Normaal
-          {% endif %}
-# Netto Energie verbruik
-      energie_netto_verbruik:
-        friendly_name: Netto energie verbruik
-        value_template: >
-          {%  if states.sensor.power_consumption.state and states.sensor.power_generation.state != "unknown" %}
-          {{ (states.sensor.power_consumption.state | float * 1000) - states.sensor.power_generation.state | float }}
-          {% else %}
-          "unknown"
-          {% endif %}
-        unit_of_measurement: 'Watt'
-# Energie verbruik in Watt
-      energie_stroom_verbruik:
-        friendly_name: Stroom verbruik
-        value_template: >
-          {%  if states.sensor.power_consumption.state != "unknown" %}
-          {{ states.sensor.power_consumption.state | float * 1000 }}
-          {% else %}
-          "unknown"
-          {% endif %}
-        unit_of_measurement: 'Watt'
 
 # Roomba Thinking Cleaner
   - platform: thinkingcleaner
@@ -98,19 +98,26 @@
   - platform: command_line
     name: ha_internal_dbsize
     scan_interval:
-     minutes: 1440
+     minutes: 360
     command: "du -m /home/pi/.homeassistant/home-assistant_v2.db | cut -f1"
     unit_of_measurement: 'MB'
     value_template: '{{ value | int - 1 }}'
   - platform: command_line
     name: ha_recorder_dbsize
     scan_interval:
-     minutes: 1440
+     minutes: 360
     command: /home/pi/.homeassistant/scripts/check_mysql_dbsize.sh
     unit_of_measurement: "MB"
+  - platform: command_line
+    name: dsmr_dbsize
+    scan_interval:
+     minutes: 360
+    command: /home/pi/.homeassistant/scripts/check_dsmr_dbsize.sh
+    unit_of_measurement: "MB"
+    value_template: "{{  value | replace ('kB','') | float /1024 | round(2) }}"
   - platform: cert_expiry
     scan_interval:
-     minutes: 1440
+     minutes: 360
     host: homeassistant.vd-meer.com
     port: 8123
 # Buienradar
@@ -151,3 +158,51 @@
     origin: device_tracker.iphone_van_martin
     destination: zone.home
     name: Travel Time Martin to Home
+
+#### MQTT SENSORS DSMR ####
+  - platform: mqtt
+    state_topic: "dsmr/reading/id"
+    name: "electricity_id"
+  - platform: mqtt
+    state_topic: "dsmr/reading/timestamp"
+    name: "electricity_timestamp"
+    value_template: "{{ as_timestamp(value) | timestamp_custom('%d-%b-%Y %H:%M') }}"
+  - platform: mqtt
+    state_topic: "dsmr/reading/electricity_currently_delivered"
+    name: "electricity_currently_delivered"
+    unit_of_measurement: "Watt"
+    value_template: "{{  value | float *1000 | round(0) }}"
+  - platform: mqtt
+    state_topic: "dsmr/reading/electricity_currently_returned"
+    name: "electricity_currently_returned"
+    unit_of_measurement: "Watt"
+    value_template: "{{  value | float *1000 | round(0) }}"
+  - platform: mqtt
+    state_topic: "dsmr/reading/electricity_delivered_1"
+    name: "electricity_delivered_1"
+    unit_of_measurement: "kWh"
+    value_template: "{{  value | round(2) }}"
+  - platform: mqtt
+    state_topic: "dsmr/reading/electricity_delivered_2"
+    name: "electricity_delivered_2"
+    unit_of_measurement: "kWh"
+    value_template: "{{  value | round(2) }}"
+  - platform: mqtt
+    state_topic: "dsmr/reading/electricity_returned_1"
+    name: "electricity_returned_1"
+    unit_of_measurement: "kWh"
+    value_template: "{{  value | round(2) }}"
+  - platform: mqtt
+    state_topic: "dsmr/reading/electricity_returned_2"
+    name: "electricity_returned_2"
+    unit_of_measurement: "kWh"
+    value_template: "{{  value | round(2) }}"
+  - platform: mqtt
+    state_topic: "dsmr/reading/extra_device_timestamp"
+    name: "extra_device_timestamp"
+    value_template: "{{ as_timestamp(value) | timestamp_custom('%d-%b-%Y %H:%M') }}"
+  - platform: mqtt
+    state_topic: "dsmr/reading/extra_device_delivered"
+    name: "extra_device_delivered"
+    unit_of_measurement: "m3"
+    value_template: "{{  value | round(2) }}"

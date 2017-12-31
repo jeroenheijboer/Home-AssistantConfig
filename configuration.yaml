@@ -30,6 +30,12 @@ tts:
   - platform: google
     language: 'nl'
 
+mqtt:
+ broker: 127.0.0.1
+ client_id: homeassistant
+ username: !secret mqtt_username
+ password: !secret mqtt_password
+
 telegram_bot:
   - platform: polling
     api_key: !secret telegram_api

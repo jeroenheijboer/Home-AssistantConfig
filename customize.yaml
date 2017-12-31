@@ -16,8 +16,7 @@ sensor.roomba_state:
   friendly_name: Status
   icon: mdi:album
 sensor.energy_consumption:
-  friendly_name: Used
-  hidden: true
+  friendly_name: Vandaag
 sensor.pvoutput:
   friendly_name: Status
   hidden: true
@@ -77,6 +76,9 @@ sensor.ha_internal_dbsize:
 sensor.ha_recorder_dbsize:
   friendly_name: HA Recorder Database
   icon: mdi:database
+sensor.dsmr_dbsize:
+  friendly_name: DSMR Database
+  icon: mdi:database
 
 # Buienradar
 sensor.br_ground_temperature:
@@ -121,6 +123,36 @@ sensor.br_rainchance_1d:
   friendly_name: Regenkans Morgen
 sensor.br_rain_1d:
   friendly_name: Regen Morgen
+
+# MQTT DSMR Sensoren
+sensor.electricity_timestamp:
+  friendly_name: Elektra tijdstip meting
+  icon: mdi:update
+sensor.electricity_currently_delivered:
+  friendly_name: Elektra huidig verbruik
+  icon: mdi:flash
+sensor.electricity_currently_returned:
+  friendly_name: Elektra huidige teruglevering
+  icon: mdi:weather-sunny
+sensor.electricity_delivered_1:
+  friendly_name: Verbruik (laag)
+  icon: mdi:arrow-collapse-down
+sensor.electricity_delivered_2:
+  friendly_name: Verbruik (normaal)
+  icon: mdi:arrow-collapse-up
+sensor.electricity_returned_1:
+  friendly_name: Teruglevering (laag)
+  icon: mdi:arrow-down-bold-box
+sensor.electricity_returned_2:
+  friendly_name: Teruglevering (normaal)
+  icon: mdi:arrow-up-bold-box
+sensor.extra_device_delivered:
+  friendly_name: Gas
+  icon: mdi:fire
+sensor.extra_device_timestamp:
+  friendly_name: Tijdstip meting gas
+  icon: mdi:update
+
 
 # Xiaomi Gateway
 input_number.loop_delay:

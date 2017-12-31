@@ -16,13 +16,9 @@ view_energie:
  icon: mdi:power-plug
  name: Energie
  entities:
-  - group.group_huidig_verbruik
   - group.group_zonnepanelen
-  - group.group_meter_readings
-#  - camera.Wattage_Dag
-#  - camera.Opwekking_Dag
-#  - camera.Opwekking_Week
-#  - camera.Opwekking_Maand
+  - group.group_mqtt_dsmr
+  - group.group_mqtt_dsmr_standen
 
 view_water:
  view: yes
@@ -104,25 +100,27 @@ group_xiaomi_gateway:
  - script.play_sel_sound_single
  - script.play_sel_sound
 
-group_meter_readings:
- name: Slimme Meter Standen
+group_mqtt_dsmr:
+ name: Elektra verbruik
  entities:
- - sensor.power_consumption_low
- - sensor.power_consumption_normal
- - sensor.power_production_low
- - sensor.power_production_normal
- - sensor.gas_consumption
- - sensor.stroom_tarief
-
-group_huidig_verbruik:
- name: Actuele verbruik
- entities:
- - sensor.energie_stroom_verbruik
- - sensor.hourly_gas_consumption
+ - sensor.electricity_currently_delivered
+ - sensor.electricity_currently_returned
  - sensor.energie_netto_verbruik
+ - sensor.energy_consumption
+
+group_mqtt_dsmr_standen:
+ name: Slimme meterstanden
+ entities:
+ - sensor.electricity_timestamp
+ - sensor.electricity_delivered_1
+ - sensor.electricity_delivered_2
+ - sensor.electricity_returned_1
+ - sensor.electricity_returned_2
+ - sensor.extra_device_delivered
+ - sensor.extra_device_timestamp
 
 group_zonnepanelen:
- name: Zonnepanelen
+ name: Zonnepanelen (PVOutput)
  entities:
  - sensor.energy_generation
  - sensor.power_generation
@@ -172,6 +170,7 @@ group_machine_info:
  - sensor.last_boot
  - sensor.ha_internal_dbsize
  - sensor.ha_recorder_dbsize
+ - sensor.dsmr_dbsize
  - sensor.ssl_certificate_expiry
 
 group_buienradar:
