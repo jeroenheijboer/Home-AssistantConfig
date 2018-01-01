@@ -1,23 +1,5 @@
-  energy:
-    name: Opwekking
-    entities:
-      - sensor.energy_generation
   energie_vandaag:
    name: Energie vandaag
    entities:
-     - sensor.energie_stroom_verbruik
-     - sensor.power_generation
-  energie_week:
-   name: Energie Week
-   entities:
-     - sensor.energie_stroom_verbruik
-   hours_to_show: 168
-  gas_today:
-    name: Gas Vandaag
-    entities:
-      - sensor.hourly_gas_consumption
-  gas_week:
-    name: Gas Week
-    entities:
-      - sensor.hourly_gas_consumption
-    hours_to_show: 168
+     - sensor.energy_consumption
+     - sensor.energy_generation

@@ -16,7 +16,7 @@ sensor.roomba_state:
   friendly_name: Status
   icon: mdi:album
 sensor.energy_consumption:
-  friendly_name: Vandaag
+  friendly_name: Totaal energie vandaag
 sensor.pvoutput:
   friendly_name: Status
   hidden: true
@@ -45,28 +45,12 @@ sensor.last_boot:
   friendly_name: Laatste opstart
 sensor.ram_available:
   friendly_name: Geheugen beschikbaar
-sensor.power_consumption_low:
-  friendly_name: Stroomverbruik (Laag)
-sensor.power_consumption_normal:
-  friendly_name: Stroomverbruik (Normaal)
-sensor.power_production_low:
-  friendly_name: Teruglevering (Laag)
-sensor.power_production_normal:
-  friendly_name: Teruglevering (Normaal)
-sensor.gas_consumption:
-  friendly_name: Gasverbruik
-sensor.hourly_gas_consumption:
-  friendly_name: Gasverbruik (per uur)
-sensor.energie_stroom_verbruik:
-  friendly_name: Stroomverbruik
-  icon: mdi:flash
-  hidden: false
 sensor.energie_netto_verbruik:
-  friendly_name: Stroomverbruik (Netto)
+  friendly_name: Huidig verbruik (Netto)
   icon: mdi:flash-outline
-sensor.power_tariff:
-  friendly_name: Huidige tarief
-  icon: mdi:format-vertical-align-center
+sensor.gas_afname_dagelijks:
+  friendly_name: Totaal gas vandaag
+  icon: mdi:fire
 sensor.ssl_certificate_expiry:
   friendly_name: SSL Vervalt
   icon: mdi:certificate
@@ -129,10 +113,10 @@ sensor.electricity_timestamp:
   friendly_name: Elektra tijdstip meting
   icon: mdi:update
 sensor.electricity_currently_delivered:
-  friendly_name: Elektra huidig verbruik
+  friendly_name: Huidig verbruik (meter)
   icon: mdi:flash
 sensor.electricity_currently_returned:
-  friendly_name: Elektra huidige teruglevering
+  friendly_name: Huidige teruglevering (meter)
   icon: mdi:weather-sunny
 sensor.electricity_delivered_1:
   friendly_name: Verbruik (laag)

@@ -10,13 +10,9 @@
       - sensor.cpu_used
       - sensor.disk_free_
       - sensor.ram_available
-      - sensor.energie_netto_verbruik     
-      - sensor.energie_stroom_verbruik
-      - sensor.energy_generation
       - sensor.ha_internal_dbsize
       - sensor.ha_recorder_dbsize
-      - sensor.hourly_gas_consumption
-      - sensor.power_generation
-      - sensor.power_production
-# do not add sensor.power_production, sensor.power_consumption_low, sensor.power_consumption_normal
-      
+      - sensor.dsmr_dbsize
+      - sensor.energy_consumption
+      - sensor.energy_generation
+      - sensor.gas_afname_dagelijks 

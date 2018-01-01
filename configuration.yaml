@@ -42,6 +42,12 @@ telegram_bot:
     allowed_chat_ids:
       - !secret telegram_chat_id1
 
+panel_iframe:
+ pvoutput:
+  title: 'PVOutput'
+  icon: mdi:chart-line
+  url: !secret pvoutput_url
+
 xiaomi_aqara:
   discovery_retry: 5
   gateways:

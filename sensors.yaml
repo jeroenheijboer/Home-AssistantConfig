@@ -40,6 +40,13 @@
           "unknown"
           {% endif %}
         unit_of_measurement: 'Watt'
+# Gas verbruik
+  - platform: command_line
+    name: gas_afname_dagelijks
+    command: "python3 /home/pi/.homeassistant/scripts/dsmr_gas_today.py"
+    unit_of_measurement: "m3"
+    value_template: '{{ value | round(2) }}'
+    scan_interval: 3600
 # Power Tarief hernoemen
 #      stroom_tarief:
 #        friendly_name: "Huidig tarief"
@@ -49,16 +56,6 @@
 #          {% else %}
 #            Normaal
 #          {% endif %}
-# Energie verbruik in Watt
-#     energie_stroom_verbruik:
-#        friendly_name: Stroom verbruik
-#        value_template: >
-#          {%  if states.sensor.power_consumption.state != "unknown" %}
-#          {{ states.sensor.power_consumption.state | float * 1000 }}
-#          {% else %}
-#          "unknown"
-#          {% endif %}
-#       unit_of_measurement: 'Watt'
 # Water sensoren
 #      m1_pulse_count:
 #        value_template: '{{% set strtext = states("sensor.serial_sensor") %}{% set m1_pulse_count = ( strtext.split(':')[5]) %}}'
@@ -114,7 +111,7 @@
      minutes: 360
     command: /home/pi/.homeassistant/scripts/check_dsmr_dbsize.sh
     unit_of_measurement: "MB"
-    value_template: "{{  value | replace ('kB','') | float /1024 | round(2) }}"
+    value_template: "{{  value | replace ('MB','') | round(0) }}"
   - platform: cert_expiry
     scan_interval:
      minutes: 360

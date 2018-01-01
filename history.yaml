@@ -5,12 +5,6 @@
     entities:
       - device_tracker.iphone_van_ilse
       - device_tracker.iphone_van_martin
-#      - sensor.cpu_used
-#      - sensor.disk_free_
-#      - sensor.ram_available
-#      - sensor.energie_netto_verbruik
-#      - sensor.energie_stroom_verbruk
-#      - sensor.energy_generation
-#      - sensor.ha_internal_dbsize
-#      - sensor.ha_recorder_dbsize
-#      - sensor.hourly_gas_consumption
+      - sensor.energy_consumption
+      - sensor.energy_generation
+      - sensor.gas_afname_dagelijks

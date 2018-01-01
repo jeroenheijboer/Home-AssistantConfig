@@ -17,7 +17,7 @@ view_energie:
  name: Energie
  entities:
   - group.group_zonnepanelen
-  - group.group_mqtt_dsmr
+  - group.group_eletrak_gas_verbruik
   - group.group_mqtt_dsmr_standen
 
 view_water:
@@ -41,9 +41,7 @@ view_grafieken:
  name: Grafieken
  icon: mdi:speedometer
  entities:
-  - group.group_grafiek_energie
-  - group.group_grafiek_gas
-  - history_graph.opwekking
+  - history_graph.energie_vandaag
 
 view_devices:
  view: yes
@@ -100,13 +98,14 @@ group_xiaomi_gateway:
  - script.play_sel_sound_single
  - script.play_sel_sound
 
-group_mqtt_dsmr:
- name: Elektra verbruik
+group_eletrak_gas_verbruik:
+ name: Elektra / Gas verbruik
  entities:
  - sensor.electricity_currently_delivered
  - sensor.electricity_currently_returned
  - sensor.energie_netto_verbruik
  - sensor.energy_consumption
+ - sensor.gas_afname_dagelijks
 
 group_mqtt_dsmr_standen:
  name: Slimme meterstanden
@@ -124,18 +123,6 @@ group_zonnepanelen:
  entities:
  - sensor.energy_generation
  - sensor.power_generation
-
-group_grafiek_gas:
- name: Gasverbruik
- entities:
-  - history_graph.gas_vandaag
-  - history_graph.gas_week
-
-group_grafiek_energie:
- name: Energieverbruik
- entities:
-  - history_graph.energie_vandaag
-  - history_graph.energie_week
 
 group_water:
  name: Water
