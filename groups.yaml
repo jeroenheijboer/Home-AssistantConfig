@@ -9,6 +9,7 @@ default_view:
  - sensor.iphone_van_ilse_battery_level
  - sensor.yr_symbol
  - group.group_lampen
+ - group.group_sensoren
  - sun.sun
 
 view_energie:
@@ -86,6 +87,11 @@ group_lampen:
  entities:
  - light.kast
  - light.gateway_light_7811dcb23274
+
+group_sensoren:
+ name: Sensoren
+ entities:
+ - binary_sensor.door_window_sensor_158d0001a1ecd5
 
 group_xiaomi_gateway:
  name: Xiaomi Gateway

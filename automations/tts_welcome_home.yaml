@@ -1,0 +1,25 @@
+#### Welkom thuis Ilse
+#- alias: Welkom thuis Ilse
+#  trigger:
+#  - platform: state
+#    entity_id: device_tracker.iphone_van_ilse
+#    from: 'not_home'
+#    to: 'home'
+#  action:
+#  - service: tts.google_say
+#    entity_id: media_player.speaker_1
+#    data:
+#       message: 'Welkom thuis Ilse'
+
+#### Welkom thuis Martin
+#- alias: Welkom thuis Martin
+#  trigger:
+#  - platform: state
+#    entity_id: device_tracker.iphone_van_martin
+#    from: 'not_home'
+#    to: 'home'
+#  action:
+#  - service: tts.google_say
+#    entity_id: media_player.speaker_1
+#    data:
+#       message: 'Welkom thuis Martin'

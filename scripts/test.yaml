@@ -1,0 +1,12 @@
+test_actionable_notify: 
+ alias: 'Test Action Push Message Kast Lamp nog aan' 
+ sequence: 
+ - service: notify.ios_iphone_van_martin 
+   data: 
+    message: 'Test: kast lamp staat nog aan!' 
+    data: 
+     push: 
+      badge: 0 
+      category: "kastlampnogaan" 
+     action_data: 
+      entity_id: light.kast

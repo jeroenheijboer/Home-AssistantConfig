@@ -1,0 +1,15 @@
+  - alias: Low Battery Notification
+    hide_entity: false
+    trigger:
+      - platform: template
+        value_template: >
+          {% for binary_sensor in states.binary_sensor if binary_sensor.attributes.battery_level %}
+            {%- if binary_sensor.attributes.battery_level | int < 60 -%}
+              {{true}}
+            {%- endif -%}
+          {%- endfor -%}
+    action:
+      - service: notify.ios_iphone_van_martin
+        data_template:
+          message: >
+            {{ trigger.to_state.attributes.friendly_name }} needs new batteries.
