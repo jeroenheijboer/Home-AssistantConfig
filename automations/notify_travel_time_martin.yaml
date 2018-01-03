@@ -1,5 +1,5 @@
 # Notificatie Martin van Werk naar Huis
-- alias: Martin werk naar huis notificatie
+- alias: Notify Travel Martin werk naar huis
   trigger:
     platform: state
     entity_id: device_tracker.iphone_van_martin

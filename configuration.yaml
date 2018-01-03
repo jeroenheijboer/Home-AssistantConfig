@@ -54,8 +54,8 @@ xiaomi_aqara:
 
 downloader:
   download_dir: downloads
-python_script:
-automation: !include_dir_merge_named automations
+python_script: !include_dir_merge_named python_scripts
+automation: !include_dir_merge_list automations
 camera: !include camera.yaml
 device_tracker: !include device_tracker.yaml
 group: !include groups.yaml
