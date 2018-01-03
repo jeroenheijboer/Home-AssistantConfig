@@ -43,7 +43,7 @@
 # Gas verbruik
   - platform: command_line
     name: gas_afname_dagelijks
-    command: "python3 /home/pi/.homeassistant/scripts/dsmr_gas_today.py"
+    command: "python3 /home/pi/.homeassistant/python_scripts/dsmr_gas_today.py"
     unit_of_measurement: "m3"
     value_template: '{{ value | round(2) }}'
     scan_interval: 3600
