@@ -4,7 +4,7 @@
     - platform: template
       value_template: >
         {% for binary_sensor in states.binary_sensor if binary_sensor.attributes.battery_level %}
-          {%- if binary_sensor.attributes.battery_level | int < 50 -%}
+          {%- if binary_sensor.attributes.battery_level | int < 10 -%}
             {{true}}
           {%- endif -%}
         {%- endfor -%}

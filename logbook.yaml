@@ -7,4 +7,5 @@
       - device_tracker.iphone_van_ilse
       - device_tracker.iphone_van_martin
       - sensor.stroom_tarief
+      - binary_sensor.door_window_sensor_158d0001a1ecd5
       

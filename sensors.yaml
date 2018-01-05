@@ -40,45 +40,32 @@
           "unknown"
           {% endif %}
         unit_of_measurement: 'Watt'
-# Gas verbruik
-  - platform: command_line
-    name: gas_afname_dagelijks
-    command: "python3 /home/pi/.homeassistant/python_scripts/dsmr_gas_today.py"
-    unit_of_measurement: "m3"
-    value_template: '{{ value | round(2) }}'
-    scan_interval: 3600
-# Power Tarief hernoemen
-#      stroom_tarief:
-#        friendly_name: "Huidig tarief"
-#        value_template: >-
-#          {% if is_state('sensor.power_tariff', 'low') %}
-#            Laag
-#          {% else %}
-#            Normaal
-#          {% endif %}
 # Water sensoren
-#      m1_pulse_count:
-#        value_template: '{{% set strtext = states("sensor.serial_sensor") %}{% set m1_pulse_count = ( strtext.split(':')[5]) %}}'
-#      m1_value: 
-#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set m1_value = ( strtext.split(':')[6] ) %}'
-#      m1_liters: 
-#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set m1_liters = ( m1_value )| float/10 %}'
-#      m2_pulse_count: 
-#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set m2_pulse_count =( strtext.split(':')[8] ) %}'
-#      m2_value: 
-#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set m2_value = ( strtext.split(':')[9] ) %}'
-#      m3_pulse_count:
-#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set m3_pulse_count = ( strtext.split(':')[11] ) %}'
-#      m3_value: 
-#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set m3_value = ( strtext.split(':')[12] ) %}'
-#      m4_pulse_count:
-#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set m4_pulse_count = ( strtext.split(':')[14] ) %}'
-#      m4_value:
-#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set m4_value = ( strtext.split(':')[15] ) %}'
-#      m5_pulse_count:
-#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set m5_pulse_count = ( strtext.split(':')[17] ) %}'
-#      m5_value:
-#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set m5_value = ( strtext.split(':')[18] ) %}'
+      pulse_m1_count:
+        value_template: >
+          {{ states.sensor.serial_sensor.state.split(':')[5] }}
+      pulse_m1_value: 
+        value_template: >
+          {{ states.sensor.serial_sensor.state.split(':')[6] }}
+      pulse_m1_liters: 
+        value_template: >
+          {{ states.sensor.pulse_m1_value.state | float/10 }}
+#      pulse_m2_count: 
+#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set pulse_m2_count =( strtext.split(':')[8] ) %}'
+#      pulse_m2_value: 
+#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set pulse_m2_value = ( strtext.split(':')[9] ) %}'
+#      pulse_m3_count:
+#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set pulse_m3_count = ( strtext.split(':')[11] ) %}'
+#      pulse_m3_value: 
+#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set pulse_m3_value = ( strtext.split(':')[12] ) %}'
+#      pulse_m4_count:
+#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set pulse_m4_count = ( strtext.split(':')[14] ) %}'
+#      pulse_m4_value:
+#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set pulse_m4_value = ( strtext.split(':')[15] ) %}'
+#      pulse_m5_count:
+#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set pulse_m5_count = ( strtext.split(':')[17] ) %}'
+#      pulse_m5_value:
+#        value_template: '{% set strtext = states("sensor.serial_sensor") %}{% set pulse_m5_value = ( strtext.split(':')[18] ) %}'
 
 # Roomba Thinking Cleaner
   - platform: thinkingcleaner
@@ -203,3 +190,10 @@
     name: "extra_device_delivered"
     unit_of_measurement: "m3"
     value_template: "{{  value | round(2) }}"
+# Gas verbruik
+  - platform: command_line
+    name: gas_afname_dagelijks
+    command: "python3 /home/pi/.homeassistant/python_scripts/dsmr_gas_today.py"
+    unit_of_measurement: "m3"
+    value_template: '{{ value | round(2) }}'
+    scan_interval: 3600

@@ -134,7 +134,9 @@ group_water:
  name: Water
  entities:
  - sensor.serial_sensor
- - sensor.watersensor
+ - sensor.pulse_m1_count
+ - sensor.pulse_m1_value
+ - sensor.pulse_m1_liters
 
 group_roomba:
  name: Stofzuiger
