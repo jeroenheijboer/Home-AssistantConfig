@@ -63,6 +63,12 @@ sensor.ha_recorder_dbsize:
 sensor.dsmr_dbsize:
   friendly_name: DSMR Database
   icon: mdi:database
+sensor.current_ha_version:
+  friendly_name: HA beschikbare versie
+  icon: mdi:github-circle
+sensor.installed_version:
+  friendly_name: HA Geinstalleerde versie
+  icon: mdi:folder-download
 
 # Buienradar
 sensor.br_ground_temperature:

@@ -104,6 +104,13 @@
      minutes: 360
     host: homeassistant.vd-meer.com
     port: 8123
+# HA Installed and Available version
+  -  platform: command_line
+     command: python3 -c "import requests; print(requests.get('https://pypi.python.org/pypi/homeassistant/json').json()['info']['version'])"
+     name: Current HA Version
+  -  platform: command_line
+     name: Installed version
+     command: "head -5 /home/pi/.homeassistant/.HA_VERSION"
 # Buienradar
   - platform: buienradar
     latitude: !secret buienradar_latitude

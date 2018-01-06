@@ -56,6 +56,7 @@ downloader:
   download_dir: downloads
 python_script: !include_dir_merge_named python_scripts
 automation: !include_dir_merge_list automations
+binary_sensor: !include binary_sensor.yaml
 camera: !include camera.yaml
 device_tracker: !include device_tracker.yaml
 group: !include groups.yaml

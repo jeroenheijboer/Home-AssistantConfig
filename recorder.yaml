@@ -15,4 +15,5 @@
       - sensor.dsmr_dbsize
       - sensor.energy_consumption
       - sensor.energy_generation
-      - sensor.gas_afname_dagelijks 
+      - binary_sensor.deurbel
+      - binary_sensor.door_window_sensor_158d0001a1ecd5

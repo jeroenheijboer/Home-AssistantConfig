@@ -167,6 +167,8 @@ group_machine_info:
  - sensor.ha_recorder_dbsize
  - sensor.dsmr_dbsize
  - sensor.ssl_certificate_expiry
+ - sensor.current_ha_version
+ - sensor.installed_version
 
 group_buienradar:
  name: Weer

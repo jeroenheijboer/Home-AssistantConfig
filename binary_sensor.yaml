@@ -1,0 +1,6 @@
+  - platform: rpi_gpio
+    ports:
+      23: deurbel
+    pull_mode: "UP"
+    bouncetime: 50
+    invert_logic: true
