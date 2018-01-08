@@ -106,9 +106,13 @@
     port: 8123
 # HA Installed and Available version
   -  platform: command_line
+     scan_interval: 
+      minutes: 120
      command: python3 -c "import requests; print(requests.get('https://pypi.python.org/pypi/homeassistant/json').json()['info']['version'])"
      name: Current HA Version
   -  platform: command_line
+     scan_interval: 
+      minutes: 120
      name: Installed version
      command: "head -5 /home/pi/.homeassistant/.HA_VERSION"
 # Buienradar

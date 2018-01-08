@@ -1,0 +1,17 @@
+- alias: Notify Deurbel
+  trigger:
+    platform: state
+    entity_id: 
+     - binary_sensor.deurbel  #deurbel
+  action:
+    - service: camera.snapshot
+      data:
+       entity_id: camera.voordeur
+       filename: '/home/pi/.homeassistant/downloads/camera_snapshots/voordeurcam.jpg'
+    - service: notify.martinenilse
+      data:
+       message: 'Deurbel: Er is aangebeld!'
+       data:
+           attachment: 
+             url: !secret foscam_snapshot_url
+             content-type: jpeg

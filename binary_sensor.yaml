@@ -2,5 +2,5 @@
     ports:
       23: deurbel
     pull_mode: "UP"
-    bouncetime: 50
+    bouncetime: 500
     invert_logic: true

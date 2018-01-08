@@ -142,7 +142,12 @@ sensor.extra_device_delivered:
 sensor.extra_device_timestamp:
   friendly_name: Tijdstip meting gas
   icon: mdi:update
+binary_sensor.deurbel:
+  friendly_name: Deurbel
 
+# Scripts
+script.notify_manually_travel_to_home:
+  icon: mdi:car
 
 # Xiaomi Gateway
 input_number.loop_delay:

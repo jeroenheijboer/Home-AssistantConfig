@@ -4,18 +4,6 @@
     password: !secret foscam_password
     name: Voordeur
   - platform: local_file
-    name: Wattage_Dag
-    file_path: /home/pi/.homeassistant/downloads/grafana_graphs/zonnepanelen_1_1.png
-  - platform: local_file
-    name: Opwekking_Dag
-    file_path: /home/pi/.homeassistant/downloads/grafana_graphs/zonnepanelen_1_2.png
-  - platform: local_file
-    name: Opwekking_Week
-    file_path: /home/pi/.homeassistant/downloads/grafana_graphs/zonnepanelen_1_3.png
-  - platform: local_file
-    name: Opwekking_Maand
-    file_path: /home/pi/.homeassistant/downloads/grafana_graphs/zonnepanelen_1_4.png
-  - platform: local_file
     name: Voordeur Laatste Snapshot
     file_path: /home/pi/.homeassistant/downloads/camera_snapshots/voordeurcam.jpg
   - platform: generic

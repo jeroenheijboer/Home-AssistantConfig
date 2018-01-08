@@ -6,8 +6,8 @@
      # voeg evt meer toe
     from: 'off'
     to: 'on'
-    for:          # avoid double notifications
-     seconds: 1
+#    for:          # avoid double notifications
+#     seconds: 1
   action:
     - service: notify.martinenilse
       data_template:

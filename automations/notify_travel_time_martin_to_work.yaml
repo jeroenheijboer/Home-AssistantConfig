@@ -1,0 +1,17 @@
+# Notificatie Martin van Werk naar Huis
+- alias: Notify Travel Martin Home to Work
+  trigger:
+    platform: state
+    entity_id: device_tracker.iphone_van_martin
+    from: 'home'
+    to: 'not_home'
+  condition:
+    - condition: time
+      after: '07:20:00'
+      before: '07:45:00'
+  action:
+    - service: notify.ios_iphone_van_martin
+      data_template:
+        title: "Martin gaat naar zijn werk!"
+        message: >
+          Hij komt om ongeveer {{ ( as_timestamp(now()) + (states("sensor.travel_time_home_to_work") | int)  * 60 )  | timestamp_custom("%H:%M") }} aan.

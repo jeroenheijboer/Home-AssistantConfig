@@ -1,0 +1,11 @@
+- alias: Notify Deurbel
+  trigger:
+    platform: state
+    entity_id: 
+     - binary_sensor.deurbel  #deurbel
+  action:
+    - service: notify.ios_iphone_van_martin
+      data_template:
+        title: 'Deurbel!'
+        message: 'Er wordt aangebeld'
+#    - delay: 00:00:05

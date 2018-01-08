@@ -10,6 +10,7 @@ default_view:
  - sensor.yr_symbol
  - group.group_lampen
  - group.group_sensoren
+ - group.group_overige
  - sun.sun
 
 view_energie:
@@ -92,6 +93,12 @@ group_sensoren:
  name: Sensoren
  entities:
  - binary_sensor.door_window_sensor_158d0001a1ecd5
+ - binary_sensor.deurbel
+
+group_overige:
+ name: Overige
+ entities:
+ - script.notify_manually_travel_to_home
 
 group_xiaomi_gateway:
  name: Xiaomi Gateway
@@ -101,8 +108,8 @@ group_xiaomi_gateway:
  - input_number.gateway_volume
  - input_select.gateway_sound
  - input_number.loop_delay
- - script.play_sel_sound_single
- - script.play_sel_sound
+ - script.xiaomi_gw_sound_single
+ - script.xiaomi_gw_sound
 
 group_eletrak_gas_verbruik:
  name: Elektra / Gas verbruik
