@@ -93,6 +93,7 @@ group_sensoren:
  name: Sensoren
  entities:
  - binary_sensor.door_window_sensor_158d0001a1ecd5
+ - binary_sensor.door_window_sensor_158d0001dbcc33
  - binary_sensor.deurbel
 
 group_overige:

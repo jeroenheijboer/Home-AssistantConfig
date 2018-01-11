@@ -160,3 +160,5 @@ light.gateway_light_7811dcb23274:
 # Xiaomi Gateway Sensoren
 binary_sensor.door_window_sensor_158d0001a1ecd5:
   friendly_name: Voordeur
+binary_sensor.door_window_sensor_158d0001dbcc33:
+  friendly_name: Achterdeur
