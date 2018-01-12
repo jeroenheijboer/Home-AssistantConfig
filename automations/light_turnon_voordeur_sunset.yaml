@@ -1,0 +1,8 @@
+- alias: 'Light turn on Voordeurlamp at sunset' 
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "+00:30:00"
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.plug_158d0001a4ea40

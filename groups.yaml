@@ -87,6 +87,7 @@ group_lampen:
  control: hidden
  entities:
  - light.kast
+ - switch.plug_158d0001a4ea40
  - light.gateway_light_7811dcb23274
 
 group_sensoren:

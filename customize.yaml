@@ -162,3 +162,6 @@ binary_sensor.door_window_sensor_158d0001a1ecd5:
   friendly_name: Voordeur
 binary_sensor.door_window_sensor_158d0001dbcc33:
   friendly_name: Achterdeur
+switch.plug_158d0001a4ea40:
+  friendly_name: Voordeurlamp
+  icon: mdi:lightbulb-outline

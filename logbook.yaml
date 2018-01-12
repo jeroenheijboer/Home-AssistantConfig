@@ -4,9 +4,8 @@
       - switch
       - media_player
       - automation
+      - binary_sensor
     entities:
       - device_tracker.iphone_van_ilse
       - device_tracker.iphone_van_martin
-      - binary_sensor.door_window_sensor_158d0001a1ecd5
-      - binary_sensor.deurbel
       
