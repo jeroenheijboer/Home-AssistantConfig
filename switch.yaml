@@ -1,1 +1,12 @@
   - platform: thinkingcleaner
+  - platform: mqtt
+    name: "Sonoff 01"
+    state_topic: "stat/sonoff_01/POWER"
+    command_topic: "cmnd/sonoff_01/POWER"
+    availability_topic: "tele/sonoff_01/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: true

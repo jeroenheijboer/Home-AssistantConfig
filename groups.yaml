@@ -101,6 +101,7 @@ group_overige:
  name: Overige
  entities:
  - script.notify_manually_travel_to_home
+ - switch.sonoff_01
 
 group_xiaomi_gateway:
  name: Xiaomi Gateway
@@ -178,6 +179,7 @@ group_machine_info:
  - sensor.ssl_certificate_expiry
  - sensor.current_ha_version
  - sensor.installed_version
+ - input_number.gateway_volume
 
 group_buienradar:
  name: Weer

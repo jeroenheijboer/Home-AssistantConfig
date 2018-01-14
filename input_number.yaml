@@ -14,3 +14,11 @@
     max: 15
     step: 1
     icon: mdi:loop
+### Internal Speaker Volume ###
+  internal_speaker_volume:
+    name: Interne Speaker Volume
+    initial: 100
+    min: 0
+    max: 100
+    step: 10
+    icon: mdi:volume-high

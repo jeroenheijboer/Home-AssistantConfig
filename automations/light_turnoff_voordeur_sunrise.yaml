@@ -1,8 +1,8 @@
 - alias: 'Light turn off Voordeurlamp at sunrise' 
   trigger:
     platform: sun
-    event: sunset
-    offset: "-00:45:00"
+    event: sunrise
+    offset: "-00:30:00"
   action:
     service: homeassistant.turn_off
     entity_id: switch.plug_158d0001a4ea40
