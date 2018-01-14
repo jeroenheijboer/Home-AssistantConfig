@@ -1,8 +1,7 @@
  - alias: "Internal Speaker - Set Volume"
+   initial_state: on
    trigger:
      platform: state
      entity_id: input_number.internal_speaker_volume
    action:
-     - service: shell_command.run_sudo
-       data:
-         cmd: "amixer set PCM -- '{{ states.input_number.internal_speaker_volume.state | int}}'%"
+     service: shell_command.set_internal_speaker_volume

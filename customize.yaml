@@ -157,6 +157,7 @@ input_number.gateway_volume:
 light.gateway_light_7811dcb23274:
   friendly_name: Xiaomi Gateway Lamp
   icon: mdi:palette
+
 # Xiaomi Gateway Sensoren
 binary_sensor.door_window_sensor_158d0001a1ecd5:
   friendly_name: Voordeur
@@ -165,3 +166,9 @@ binary_sensor.door_window_sensor_158d0001dbcc33:
 switch.plug_158d0001a4ea40:
   friendly_name: Voordeurlamp
   icon: mdi:lightbulb-outline
+
+# Battery sensoren
+sensor.battery_xiaomi_voordeur:
+  icon: mdi:battery-70
+sensor.battery_xiaomi_achterdeur:
+  icon: mdi:battery-70

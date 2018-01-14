@@ -1,0 +1,1 @@
+ set_internal_speaker_volume: "amixer set PCM -- '{{ states.input_number.internal_speaker_volume.state | int}}'%"

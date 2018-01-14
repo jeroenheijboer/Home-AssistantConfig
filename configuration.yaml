@@ -85,5 +85,6 @@ notify: !include notify.yaml
 recorder: !include recorder.yaml
 script: !include_dir_merge_named scripts
 sensor: !include sensors.yaml
+shell_command: !include shell_command.yaml
 switch: !include switch.yaml
 zone: !include zone.yaml

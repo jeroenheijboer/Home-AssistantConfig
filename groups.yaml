@@ -52,6 +52,7 @@ view_devices:
  entities:
  - group.group_roomba
  - group.group_xiaomi_gateway
+ - group.group_battery_status
 
 view_audiovideo:
  view: yes
@@ -99,6 +100,7 @@ group_sensoren:
 
 group_overige:
  name: Overige
+ control: hidden
  entities:
  - script.notify_manually_travel_to_home
  - switch.sonoff_01
@@ -179,7 +181,13 @@ group_machine_info:
  - sensor.ssl_certificate_expiry
  - sensor.current_ha_version
  - sensor.installed_version
- - input_number.gateway_volume
+ - input_number.internal_speaker_volume
+
+group_battery_status:
+ name: Batterij Levels
+ entities:
+ - sensor.battery_xiaomi_voordeur
+ - sensor.battery_xiaomi_achterdeur
 
 group_buienradar:
  name: Weer
