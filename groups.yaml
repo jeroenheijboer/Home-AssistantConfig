@@ -97,6 +97,7 @@ group_sensoren:
  - binary_sensor.door_window_sensor_158d0001a1ecd5
  - binary_sensor.door_window_sensor_158d0001dbcc33
  - binary_sensor.door_window_sensor_158d00016d1372
+ - binary_sensor.door_window_sensor_158d00016c3e09
  - binary_sensor.deurbel
 
 group_overige:
@@ -190,6 +191,7 @@ group_battery_status:
  - sensor.battery_xiaomi_voordeur
  - sensor.battery_xiaomi_achterdeur
  - sensor.battery_xiaomi_schuur
+ - sensor.battery_xiaomi_brievenbus
 
 group_buienradar:
  name: Weer
