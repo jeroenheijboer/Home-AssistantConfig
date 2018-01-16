@@ -163,6 +163,8 @@ binary_sensor.door_window_sensor_158d0001a1ecd5:
   friendly_name: Voordeur
 binary_sensor.door_window_sensor_158d0001dbcc33:
   friendly_name: Achterdeur
+binary_sensor.door_window_sensor_158d00016d1372:
+  friendly_name: Schuur
 switch.plug_158d0001a4ea40:
   friendly_name: Voordeurlamp
   icon: mdi:lightbulb-outline
@@ -171,4 +173,6 @@ switch.plug_158d0001a4ea40:
 sensor.battery_xiaomi_voordeur:
   icon: mdi:battery-70
 sensor.battery_xiaomi_achterdeur:
+  icon: mdi:battery-70
+sensor.battery_xiaomi_schuur:
   icon: mdi:battery-70
