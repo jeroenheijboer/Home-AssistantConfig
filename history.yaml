@@ -1,7 +1,8 @@
+  use_include_order: True
   include:
     domains:
       - light
-#      - media_player
+      - binary_sensor
     entities:
       - device_tracker.iphone_van_ilse
       - device_tracker.iphone_van_martin

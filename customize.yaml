@@ -143,6 +143,7 @@ sensor.extra_device_timestamp:
   friendly_name: Tijdstip meting gas
   icon: mdi:update
 binary_sensor.deurbel:
+  device_class: sound
   friendly_name: Deurbel
 
 # Scripts
@@ -160,12 +161,16 @@ light.gateway_light_7811dcb23274:
 
 # Xiaomi Gateway Sensoren
 binary_sensor.door_window_sensor_158d0001a1ecd5:
+  device_class: door
   friendly_name: Voordeur
 binary_sensor.door_window_sensor_158d0001dbcc33:
+  device_class: door
   friendly_name: Achterdeur
 binary_sensor.door_window_sensor_158d00016d1372:
+  device_class: door
   friendly_name: Schuur
 binary_sensor.door_window_sensor_158d00016c3e09:
+  device_class: door
   friendly_name: Brievenbus
   icon: mdi:mailbox
 switch.plug_158d0001a4ea40:
