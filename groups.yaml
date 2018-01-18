@@ -99,6 +99,8 @@ group_sensoren:
  - binary_sensor.door_window_sensor_158d00016d1372
  - binary_sensor.door_window_sensor_158d00016c3e09
  - binary_sensor.deurbel
+ - sensor.temperature_158d0001f2aba5
+ - sensor.humidity_158d0001f2aba5
 
 group_overige:
  name: Overige
@@ -191,7 +193,8 @@ group_battery_status:
  - sensor.battery_xiaomi_voordeur
  - sensor.battery_xiaomi_achterdeur
  - sensor.battery_xiaomi_schuur
- - sensor.battery_xiaomi_brievenbus
+ - sensor.battery_xiaomi_contactsensor
+ - sensor.battery_xiaomi_temp_badkamer
 
 group_buienradar:
  name: Weer
