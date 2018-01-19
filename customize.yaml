@@ -169,6 +169,12 @@ binary_sensor.door_window_sensor_158d0001dbcc33:
 binary_sensor.door_window_sensor_158d00016d1372:
   device_class: door
   friendly_name: Schuur
+binary_sensor.door_window_sensor_158d0001b7baa0:
+  device_class: door
+  friendly_name: Schutting Voor
+binary_sensor.door_window_sensor_158d0001b91ae0:
+  device_class: door
+  friendly_name: Schutting Achter
 binary_sensor.door_window_sensor_158d00016c3e09:
   device_class: opening
   friendly_name: Contactsensor
@@ -179,15 +185,6 @@ sensor.temperature_158d0001f2aba5:
   friendly_name: Badkamer Temperatuur
 sensor.humidity_158d0001f2aba5:
   friendly_name: Badkamer Luchtvochtigheid
-
-# Battery sensoren
-sensor.battery_xiaomi_voordeur:
-  icon: mdi:battery-70
-sensor.battery_xiaomi_achterdeur:
-  icon: mdi:battery-70
-sensor.battery_xiaomi_schuur:
-  icon: mdi:battery-70
-sensor.battery_xiaomi_contactsensor:
-  icon: mdi:battery-70
-sensor.battery_xiaomi_temp_badkamer:
-  icon: mdi:battery-70
+binary_sensor.water_leak_sensor_158d0001bbc1e7:
+  device_class: moisture
+  friendly_name: Watersensor Wasmachine
