@@ -29,6 +29,26 @@ tts:
   - platform: google
     language: 'nl'
 
+zwave:
+  usb_path: /dev/ttyACM1
+  device_config:
+    zwave._:
+      ignored: true
+    zwave.__2:
+      ignored: true
+    zwave.__3:
+      ignored: true
+    zwave.__4:
+      ignored: true
+    switch.switch:
+      ignored: true
+    switch.switch_2:
+      ignored: true
+    switch.switch_3:
+      ignored: true
+    switch.switch_4:
+      ignored: true
+
 mqtt:
  broker: 127.0.0.1
  client_id: homeassistant
