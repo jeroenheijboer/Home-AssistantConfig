@@ -2,7 +2,11 @@
   trigger:
     platform: state
     entity_id: 
-     - binary_sensor.door_window_sensor_158d0001dbcc33  #achterdeur
+     - binary_sensor.door_window_sensor_158d0001b7baa0 #SchuttingVoor
+     - binary_sensor.door_window_sensor_158d0001b91ae0 #SchuttingAchter
+     - binary_sensor.door_window_sensor_158d0001dbcc33 #Achterdeur
+     - binary_sensor.door_window_sensor_158d0001a1ecd5 #Voordeur
+     - binary_sensor.door_window_sensor_158d00016d1372 #Schuur
      # voeg evt meer toe
     from: 'off'
     to: 'on'
@@ -16,14 +20,14 @@
       state: 'not_home' 
     - condition: state 
       entity_id: 'device_tracker.iphonevanilse' 
-      state: 'not_home' 
+      state: 'not_home'
   action:
     - service: notify.martinenilse
       data_template:
         title: '{{ trigger.to_state.attributes.friendly_name }} geopend!'
         message: >
                  De {{ trigger.to_state.attributes.friendly_name }} is geopend!
-      data:
-       data:
-        push:
-         sound: US-EN-Morgan-Freeman-Front-Door-Opened.wav
+#      data:
+#       data:
+#        push:
+#         sound: US-EN-Morgan-Freeman-Front-Door-Opened.wav

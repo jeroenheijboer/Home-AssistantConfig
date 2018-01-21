@@ -1,0 +1,71 @@
+- alias: Notify Solar Generated 2KwH
+  hide_entity: false
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.energy_generation
+    above: 2
+  action:
+    - service: notify.ios_iphone_van_martin
+      data_template:
+        message: >
+          Je hebt al {{ sensor.energy_generation }}KwH opgewekt!
+
+- alias: Notify Solar Generated 4KwH
+  hide_entity: false
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.energy_generation
+    above: 4
+  action:
+    - service: notify.ios_iphone_van_martin
+      data_template:
+        message: >
+          Je hebt al {{ sensor.energy_generation }}KwH opgewekt!
+
+- alias: Notify Solar Generated 10KwH
+  hide_entity: false
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.energy_generation
+    above: 10
+  action:
+    - service: notify.ios_iphone_van_martin
+      data_template:
+        message: >
+          Je hebt al {{ sensor.energy_generation }}KwH opgewekt!
+
+- alias: Notify Solar Generated 14KwH
+  hide_entity: false
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.energy_generation
+    above: 14
+  action:
+    - service: notify.ios_iphone_van_martin
+      data_template:
+        message: >
+          Woohoo, je hebt al {{ sensor.energy_generation }}KwH opgewekt!
+
+- alias: Notify Solar Generated 18KwH
+  hide_entity: false
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.energy_generation
+    above: 18
+  action:
+    - service: notify.ios_iphone_van_martin
+      data_template:
+        message: >
+          Woohoo, je hebt al {{ sensor.energy_generation }}KwH opgewekt!
+
+- alias: Notify Solar Generated 20KwH
+  hide_entity: false
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.energy_generation
+    above: 20
+  action:
+    - service: notify.ios_iphone_van_martin
+      data_template:
+        message: >
+          Woohoo, je hebt al {{ sensor.energy_generation }}KwH opgewekt!
