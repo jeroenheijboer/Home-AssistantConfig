@@ -8,7 +8,7 @@
     - service: notify.ios_iphone_van_martin
       data_template:
         message: >
-          Je hebt al {{ sensor.energy_generation }}KwH opgewekt!
+          Je hebt al {{ states.sensor.energy_generation.state }}KwH opgewekt!
 
 - alias: Notify Solar Generated 4KwH
   hide_entity: false
@@ -20,7 +20,7 @@
     - service: notify.ios_iphone_van_martin
       data_template:
         message: >
-          Je hebt al {{ sensor.energy_generation }}KwH opgewekt!
+          Je hebt al {{ states.sensor.energy_generation.state }}KwH opgewekt!
 
 - alias: Notify Solar Generated 10KwH
   hide_entity: false
@@ -32,7 +32,7 @@
     - service: notify.ios_iphone_van_martin
       data_template:
         message: >
-          Je hebt al {{ sensor.energy_generation }}KwH opgewekt!
+          Je hebt al {{ states.sensor.energy_generation.state }}}KwH opgewekt!
 
 - alias: Notify Solar Generated 14KwH
   hide_entity: false
@@ -44,7 +44,7 @@
     - service: notify.ios_iphone_van_martin
       data_template:
         message: >
-          Woohoo, je hebt al {{ sensor.energy_generation }}KwH opgewekt!
+          Woohoo, je hebt al {{ states.sensor.energy_generation.state }}KwH opgewekt!
 
 - alias: Notify Solar Generated 18KwH
   hide_entity: false
@@ -56,7 +56,7 @@
     - service: notify.ios_iphone_van_martin
       data_template:
         message: >
-          Woohoo, je hebt al {{ sensor.energy_generation }}KwH opgewekt!
+          Woohoo, je hebt al {{ states.sensor.energy_generation.state }}KwH opgewekt!
 
 - alias: Notify Solar Generated 20KwH
   hide_entity: false
@@ -68,4 +68,4 @@
     - service: notify.ios_iphone_van_martin
       data_template:
         message: >
-          Woohoo, je hebt al {{ sensor.energy_generation }}KwH opgewekt!
+          Woohoo, je hebt al {{ states.sensor.energy_generation.state }}KwH opgewekt!
