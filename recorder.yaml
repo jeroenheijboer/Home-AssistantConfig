@@ -8,6 +8,7 @@
       - automation
       - switch
       - media_player
+      - climate
     entities:
       - device_tracker.iphone_van_ilse
       - device_tracker.iphone_van_martin

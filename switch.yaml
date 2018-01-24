@@ -10,3 +10,8 @@
     payload_available: "Online"
     payload_not_available: "Offline"
     retain: true
+  - platform: command_line
+    switches:
+      heatlink_on_off:
+        command_on: !secret homewizard_heatlink_on
+        command_off: !secret homewizard_heatlink_off

@@ -1,0 +1,10 @@
+- alias: Switch Keuken
+  trigger:
+    - platform: event
+      event_type: click
+      event_data:
+        entity_id: binary_sensor.wall_switch_158d00015f24d1
+        click_type: single
+  action:
+    - service: light.toggle
+      entity_id: light.kast

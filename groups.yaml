@@ -22,6 +22,13 @@ view_energie:
   - group.group_eletrak_gas_verbruik
   - group.group_mqtt_dsmr_standen
 
+view_klimaat:
+ view: yes
+ icon: mdi:thermometer
+ name: Klimaat
+ entities:
+ - group.group_klimaat
+
 view_water:
  view: yes
  icon: mdi:water-pump
@@ -77,6 +84,12 @@ view_hardware:
  - group.group_machine_info
 
 ### GROUPS ###
+
+group_klimaat:
+ name: Klimaat
+ entities:
+ - switch.heatlink_on_off
+ - climate.heatlink
 
 group_cameras:
  name: Camera
@@ -201,6 +214,7 @@ group_battery_status:
  - sensor.battery_xiaomi_contactsensor
  - sensor.battery_xiaomi_temp_badkamer
  - sensor.battery_xiaomi_watersensor_wasmachine
+ - sensor.battery_xiaomi_schakelaar_keuken
 
 group_buienradar:
  name: Weer
