@@ -3,7 +3,7 @@ This component wouldn't be possible without the massive amount of inspiration I 
 https://github.com/cyberjunky/home-assistant-custom-components/blob/master/climate/toon.py
 https://github.com/rvdvoorde/domoticz-homewizard
 
-This component is far from perfect, but it'll do for now.
+This component is far from done yet, but it'll do for now.
 """
 from homeassistant.const import TEMP_CELSIUS
 from homeassistant.helpers.entity import Entity
@@ -23,7 +23,7 @@ SUPPORT_FLAGS = SUPPORT_TARGET_TEMPERATURE
 _LOGGER = logging.getLogger(__name__)
 
 DEFAULT_NAME = 'Homewizard Thermostat'
-DEFAULT_TIMEOUT = 5
+DEFAULT_TIMEOUT = 2
 BASE_URL = 'http://{0}/{1}/{2}'
 
 ATTR_MODE = 'Heating'
@@ -58,7 +58,7 @@ class homewizard(ClimateDevice):
     def connect(order):
         try:
             url = Request(order)
-            response = urlopen(url, timeout = DEFAULT_TIMEOUT)
+            response = urlopen(url, timeout=DEFAULT_TIMEOUT)
 
         except HTTPError as e:
             _LOGGER.exception("The server couldn\'t fulfill the request. Error code: ", e.code)
@@ -81,15 +81,20 @@ class homewizard(ClimateDevice):
 
     def update(self):
         """Fetch new state data for the sensor.
-        
+
         This is the only method that should fetch new data for Home Assistant.
         """
-        getlist = self.connect(BASE_URL.format(self._address, self._password, "get-sensors"))
-        heatlink = dict(getlist['response']['heatlinks'][0])
-        self._current_temp = round(heatlink['rte'],1)
-        self._current_setpoint = round(heatlink['tte'],1)
-        self._current_state = heatlink['heating']
         _LOGGER.debug("Update called")
+        getlist = self.connect(BASE_URL.format(self._address, self._password, "get-sensors"))
+        if getlist != 'error':
+            heatlink = dict(getlist['response']['heatlinks'][0])
+            self._current_temp = round(heatlink['rte'], 1)
+            self._current_setpoint = round(heatlink['tte'], 1)
+            self._current_state = heatlink['heating']
+            _LOGGER.debug("Update successful")
+        else:
+            _LOGGER.exception("Update failed")
+            
 
     @property
     def supported_features(self):

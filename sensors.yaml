@@ -84,7 +84,7 @@
                 {{ states.sensor.temperature_158d0001f2aba5.state }}
             {%- endif %}
         icon_template: '{%- if  states.sensor.temperature_158d0001f2aba5.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.sensor.temperature_158d0001f2aba5.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.sensor.temperature_158d0001f2aba5.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
-      battery_xiaomi_watersensor_meterkast:
+      battery_xiaomi_watersensor_wasmachine:
         friendly_name: 'Watersensor Wasmachine'
         unit_of_measurement: '%'
         value_template: >

@@ -1,0 +1,21 @@
+- alias: 'Lights turn on at sunset' 
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:30:00"
+  action:
+    service: homeassistant.turn_on
+    entity_id: 
+    - switch.plug_158d0001a4ea40  #voordeurlamp
+    - switch.plug_158d00019d43e8  #hoeklamp
+
+- alias: 'Lights turn off at sunrise' 
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: "+00:30:00"
+  action:
+    service: homeassistant.turn_off
+    entity_id: 
+    - switch.plug_158d0001a4ea40  #voordeurlamp
+    - switch.plug_158d00019d43e8  #hoeklamp

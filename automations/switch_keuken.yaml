@@ -6,5 +6,5 @@
         entity_id: binary_sensor.wall_switch_158d00015f24d1
         click_type: single
   action:
-    - service: light.toggle
-      entity_id: light.kast
+    - service: switch.toggle
+      entity_id: switch.plug_158d0001a6592f

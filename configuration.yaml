@@ -29,6 +29,10 @@ tts:
   - platform: google
     language: 'nl'
 
+#logger:
+#  logs:
+#    custom_components.climate.homewizard: debug
+
 zwave:
   usb_path: /dev/ttyACM1
 
@@ -53,6 +57,7 @@ mqtt:
 climate:
   - platform: homewizard
     name: Heatlink
+    heater: switch.heatlink_on_off
     host: !secret homewizard_ip
     password: !secret homewizard_password
     # not sure if this works:

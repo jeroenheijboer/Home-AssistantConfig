@@ -1,9 +1,6 @@
-# Light
 light.kast:
   friendly_name: Kast
   icon: mdi:palette
-
-# Sensoren
 sensor.yr_symbol:
   friendly_name: Weer
 sensor.roomba_battery:
@@ -69,8 +66,6 @@ sensor.current_ha_version:
 sensor.installed_version:
   friendly_name: HA Geinstalleerde versie
   icon: mdi:folder-download
-
-# Buienradar
 sensor.br_ground_temperature:
   friendly_name: Grond temperatuur
 sensor.br_humidity:
@@ -97,8 +92,6 @@ sensor.br_wind_gust:
   friendly_name: Windstoten
 sensor.br_wind_speed:
   friendly_name: Windsnelheid
-
-# Buienradar Voorspelling
 sensor.br_precipitation:
   friendly_name: Neerslag komende 60 min
 sensor.br_precipitation_forecast_average:
@@ -113,8 +106,6 @@ sensor.br_rainchance_1d:
   friendly_name: Regenkans Morgen
 sensor.br_rain_1d:
   friendly_name: Regen Morgen
-
-# MQTT DSMR Sensoren
 sensor.electricity_timestamp:
   friendly_name: Elektra tijdstip meting
   icon: mdi:update
@@ -145,12 +136,8 @@ sensor.extra_device_timestamp:
 binary_sensor.deurbel:
   device_class: sound
   friendly_name: Deurbel
-
-# Scripts
 script.notify_manually_travel_to_home:
   icon: mdi:car
-
-# Xiaomi Gateway
 input_number.loop_delay:
   friendly_name: Herhaal in (sec)
 input_number.gateway_volume:
@@ -158,8 +145,6 @@ input_number.gateway_volume:
 light.gateway_light_7811dcb23274:
   friendly_name: Xiaomi Gateway Lamp
   icon: mdi:palette
-
-# Xiaomi Gateway Sensoren
 binary_sensor.door_window_sensor_158d0001a1ecd5:
   device_class: door
   friendly_name: Voordeur
@@ -181,6 +166,12 @@ binary_sensor.door_window_sensor_158d00016c3e09:
 switch.plug_158d0001a4ea40:
   friendly_name: Voordeurlamp
   icon: mdi:lightbulb-outline
+switch.plug_158d00019d43e8:
+  friendly_name: Hoeklamp
+  icon: mdi:lightbulb-outline
+switch.plug_158d0001a6592f:
+  friendly_name: Keukenlamp
+  icon: mdi:lightbulb-outline
 sensor.temperature_158d0001f2aba5:
   friendly_name: Badkamer Temperatuur
 sensor.humidity_158d0001f2aba5:
@@ -190,8 +181,6 @@ binary_sensor.water_leak_sensor_158d0001bbc1e7:
   friendly_name: Watersensor Wasmachine
 binary_sensor.wall_switch_158d00015f24d1:
   friendly_name: Schakelaar Keuken
-
-#Climate
 switch.heatlink_on_off:
   friendly_name: Heatlink Activatie
   icon: mdi:content-duplicate

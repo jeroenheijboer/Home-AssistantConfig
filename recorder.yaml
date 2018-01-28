@@ -20,3 +20,12 @@
       - sensor.dsmr_dbsize
       - sensor.energy_consumption
       - sensor.energy_generation
+      - sensor.battery_xiaomi_voordeur
+      - sensor.battery_xiaomi_achterdeur
+      - sensor.battery_xiaomi_schuur
+      - sensor.battery_xiaomi_schutting_voor
+      - sensor.battery_xiaomi_schutting_achter
+      - sensor.battery_xiaomi_voordeur
+      - sensor.battery_xiaomi_temp_badkamer
+      - sensor.battery_xiaomi_watersensor_wasmachine
+      - sensor.battery_xiaomi_schakelaar_keuken
