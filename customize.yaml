@@ -176,11 +176,23 @@ sensor.temperature_158d0001f2aba5:
   friendly_name: Badkamer Temperatuur
 sensor.humidity_158d0001f2aba5:
   friendly_name: Badkamer Luchtvochtigheid
+  icon: mdi:water-percent
 binary_sensor.water_leak_sensor_158d0001bbc1e7:
   device_class: moisture
   friendly_name: Watersensor Wasmachine
 binary_sensor.wall_switch_158d00015f24d1:
   friendly_name: Schakelaar Keuken
+binary_sensor.motion_sensor_158d0001e55067:
+  friendly_name: Voorraadkast (Bew)
+sensor.illumination_158d0001e55067:
+  friendly_name: Voorraadkast (Licht)
+  icon: mdi:image-filter-center-focus
 switch.heatlink_on_off:
   friendly_name: Heatlink Activatie
   icon: mdi:content-duplicate
+sensor.afzuiging_tijd:
+ friendly_name: Tijd
+ icon: mdi:timer
+sensor.afzuiging_snelheid:
+ friendly_name: Snelheid
+ icon: mdi:transfer  

@@ -87,6 +87,7 @@ automation: !include_dir_merge_list automations
 binary_sensor: !include binary_sensor.yaml
 camera: !include camera.yaml
 device_tracker: !include device_tracker.yaml
+fan: !include fan.yaml
 group: !include groups.yaml
 history: !include history.yaml
 history_graph: !include history_graph.yaml

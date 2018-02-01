@@ -1,13 +1,13 @@
-- alias: Notify Deurbel
+- alias: Notify Doorbell
   trigger:
     platform: state
     entity_id: 
-     - binary_sensor.deurbel  #deurbel
+     - binary_sensor.doorbell  #deurbel
     from: 'off'
     to: 'on'
-  condition:
-    condition: template
-    value_template: '{{ (as_timestamp(now()) - as_timestamp(states.automation.automation_notify_deurbel.attributes.last_triggered | default(0)) | int > 10)}}'
+#  condition:
+#    condition: template
+#    value_template: '{{ (as_timestamp(now()) - as_timestamp(states.automation.automation_notify_doorbell.attributes.last_triggered | default(0)) | int > 10)}}'
   action:
     - service: camera.snapshot
       data:

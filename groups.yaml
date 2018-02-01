@@ -28,6 +28,7 @@ view_klimaat:
  name: Klimaat
  entities:
  - group.group_klimaat
+ - group.group_ventilator
 
 view_water:
  view: yes
@@ -91,6 +92,13 @@ group_klimaat:
  - switch.heatlink_on_off
  - climate.heatlink
 
+group_ventilator:
+ name: Centrale afzuizing
+ entities:
+ - fan.centrale_afzuiging
+ - sensor.afzuiging_snelheid
+ - sensor.afzuiging_tijd
+
 group_cameras:
  name: Camera
  entities:
@@ -119,6 +127,8 @@ group_sensoren:
  - sensor.temperature_158d0001f2aba5
  - sensor.humidity_158d0001f2aba5
  - binary_sensor.water_leak_sensor_158d0001bbc1e7
+ - binary_sensor.motion_sensor_158d0001e55067
+ - sensor.illumination_158d0001e55067
 
 group_overige:
  name: Overige
@@ -217,6 +227,7 @@ group_battery_status:
  - sensor.battery_xiaomi_temp_badkamer
  - sensor.battery_xiaomi_watersensor_wasmachine
  - sensor.battery_xiaomi_schakelaar_keuken
+ - sensor.battery_xiaomi_beweging_voorraadkast
 
 group_buienradar:
  name: Weer

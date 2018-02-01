@@ -1,6 +1,6 @@
   - platform: rpi_gpio
     ports:
-      23: deurbel
+      23: doorbell
     pull_mode: "UP"
 #    bouncetime: 500
     invert_logic: true
