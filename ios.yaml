@@ -9,3 +9,12 @@
       authenticationRequired: no 
       destructive: yes 
       behavior: 'default'
+  - name: hoeklampnogaan
+    identifier: hoeklampnogaan
+    actions: 
+    - identifier: ZETHOEKLAMPUIT
+      title: "Zet de lamp uit" 
+      activationMode: 'background' 
+      authenticationRequired: no 
+      destructive: yes 
+      behavior: 'default'

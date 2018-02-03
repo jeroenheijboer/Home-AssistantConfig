@@ -1,0 +1,13 @@
+- alias: Notify Smoke Detection
+  trigger:
+    platform: state
+    entity_id: 
+     - binary_sensor.smoke_sensor_158d0001d8321b #Rook BG
+     - binary_sensor.smoke_sensor_158d000149f568 #Rook 1e
+    from: 'off'
+    to: 'on'
+  action:
+    - service: notify.martinenilse
+      data_template:
+        message: >
+          Alarm! Er is rook bij de {{ trigger.to_state.attributes.friendly_name }} gedecteerd!.

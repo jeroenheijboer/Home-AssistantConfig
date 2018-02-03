@@ -187,6 +187,10 @@ binary_sensor.motion_sensor_158d0001e55067:
 sensor.illumination_158d0001e55067:
   friendly_name: Voorraadkast (Licht)
   icon: mdi:image-filter-center-focus
+binary_sensor.smoke_sensor_158d0001d8321b:
+  friendly_name: Rookmelder BG
+binary_sensor.smoke_sensor_158d000149f568:
+  friendly_name: Rookmelder 1e
 switch.heatlink_on_off:
   friendly_name: Heatlink Activatie
   icon: mdi:content-duplicate

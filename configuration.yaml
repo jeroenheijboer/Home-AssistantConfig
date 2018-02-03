@@ -18,7 +18,7 @@ http:
 
 sun:
 frontend:
- javascript_version: es5
+# javascript_version: es5
 config:
 updater:
  include_used_components: true

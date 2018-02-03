@@ -1,0 +1,40 @@
+- id: action_push_message 
+  alias: 'Notify lights still on when leaving' 
+  initial_state: 'on' 
+  trigger: 
+   - platform: state 
+     entity_id: switch.plug_158d00019d43e8
+     to: 'on' 
+     for: 
+      minutes: 30 
+  condition: 
+   condition: and 
+   conditions: 
+    - condition: state 
+      entity_id: 'device_tracker.iphonevanmartin' 
+      state: 'not_home' 
+    - condition: state 
+      entity_id: 'device_tracker.iphonevanilse' 
+      state: 'not_home' 
+  action: 
+   service: notify.martinenilse 
+   data: 
+    message: "De Hoeklamp staat nog aan!" 
+    data: 
+     push: 
+      badge: 0 
+      category: "hoeklampnogaan" 
+     action_data: 
+      entity_id: switch.plug_158d00019d43e8
+
+- id: push_notify_hoeklampnogaan_action 
+  alias: 'Action for Notify Hoeklamp aan' 
+  initial_state: 'on' 
+  trigger: 
+  - platform: event 
+    event_type: ios.notification_action_fired 
+    event_data: 
+     actionName: ZETHOEKLAMPUIT
+  action: 
+   service: homeassistant.turn_off 
+   entity_id: switch.plug_158d00019d43e8

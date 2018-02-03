@@ -129,6 +129,8 @@ group_sensoren:
  - binary_sensor.water_leak_sensor_158d0001bbc1e7
  - binary_sensor.motion_sensor_158d0001e55067
  - sensor.illumination_158d0001e55067
+ - binary_sensor.smoke_sensor_158d0001d8321b
+ - binary_sensor.smoke_sensor_158d000149f568
 
 group_overige:
  name: Overige
@@ -228,6 +230,8 @@ group_battery_status:
  - sensor.battery_xiaomi_watersensor_wasmachine
  - sensor.battery_xiaomi_schakelaar_keuken
  - sensor.battery_xiaomi_beweging_voorraadkast
+ - sensor.battery_xiaomi_rook_bg
+ - sensor.battery_xiaomi_rook_1e
 
 group_buienradar:
  name: Weer

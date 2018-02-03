@@ -29,3 +29,8 @@
       - sensor.battery_xiaomi_temp_badkamer
       - sensor.battery_xiaomi_watersensor_wasmachine
       - sensor.battery_xiaomi_schakelaar_keuken
+      - sensor.battery_xiaomi_rook_bg
+      - sensor.battery_xiaomi_rook_1e
+      - sensor.battery_xiaomi_beweging_voorraadkast
+      - fan.centrale_afzuiging
+      - sensor.afzuiging_snelheid
