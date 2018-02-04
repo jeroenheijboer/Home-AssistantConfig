@@ -1,0 +1,10 @@
+  xiaomi_gw_sound_single:
+    alias: "Afspelen"
+    sequence:
+      - condition: state
+        entity_id: input_boolean.mute_gateway_sounds
+        state: 'off'
+      - service: xiaomi_aqara.play_ringtone
+        data_template:
+          ringtone_id: "{{ states.input_select.gateway_sound.state.split('-')[0] }}"
+          ringtone_vol: "{{ states.input_number.gateway_volume.state|int }}"

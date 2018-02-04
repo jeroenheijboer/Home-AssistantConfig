@@ -1,0 +1,8 @@
+  xiaomi_gw_sound_loop:
+    alias: "Herhaal modus"
+    sequence:
+      - condition: state
+        entity_id: input_boolean.mute_gateway_sounds
+        state: 'off'
+      - delay: '00:00:{{ states.input_number.loop_delay.state | int }}'
+      - service: script.xiaomi_gw_sound
