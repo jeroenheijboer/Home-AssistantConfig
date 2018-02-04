@@ -25,6 +25,7 @@
       - sensor.battery_xiaomi_schuur
       - sensor.battery_xiaomi_schutting_voor
       - sensor.battery_xiaomi_schutting_achter
+      - sensor.battery_xiaomi_brievenbus
       - sensor.battery_xiaomi_voordeur
       - sensor.battery_xiaomi_temp_badkamer
       - sensor.battery_xiaomi_watersensor_wasmachine

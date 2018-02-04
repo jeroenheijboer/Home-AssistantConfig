@@ -64,6 +64,16 @@
                 {{ states.binary_sensor.door_window_sensor_158d0001b91ae0.state }}
             {%- endif %}
         icon_template: '{%- if  states.binary_sensor.door_window_sensor_158d0001b91ae0.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.door_window_sensor_158d0001b91ae0.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.door_window_sensor_158d0001b91ae0.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
+      battery_xiaomi_brievenbus:
+        friendly_name: 'Brievenbus' 
+        unit_of_measurement: '%'
+        value_template: >
+            {%- if states.binary_sensor.door_window_sensor_158d0001de760a.attributes.battery_level %}
+                {{ states.binary_sensor.door_window_sensor_158d0001de760a.attributes.battery_level|round }}
+            {% else %}
+                {{ states.binary_sensor.door_window_sensor_158d0001de760a.state }}
+            {%- endif %}
+        icon_template: '{%- if  states.binary_sensor.door_window_sensor_158d0001de760a.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.door_window_sensor_158d0001de760a.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.door_window_sensor_158d0001de760a.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
       battery_xiaomi_contactsensor:
         friendly_name: 'Contactsensor'
         unit_of_measurement: '%'

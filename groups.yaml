@@ -123,6 +123,7 @@ group_sensoren:
  - binary_sensor.door_window_sensor_158d00016c3e09
  - binary_sensor.door_window_sensor_158d0001b7baa0
  - binary_sensor.door_window_sensor_158d0001b91ae0
+ - binary_sensor.door_window_sensor_158d0001de760a
  - binary_sensor.deurbel
  - sensor.temperature_158d0001f2aba5
  - sensor.humidity_158d0001f2aba5
@@ -225,6 +226,7 @@ group_battery_status:
  - sensor.battery_xiaomi_schuur
  - sensor.battery_xiaomi_schutting_voor
  - sensor.battery_xiaomi_schutting_achter
+ - sensor.battery_xiaomi_brievenbus
  - sensor.battery_xiaomi_contactsensor
  - sensor.battery_xiaomi_temp_badkamer
  - sensor.battery_xiaomi_watersensor_wasmachine

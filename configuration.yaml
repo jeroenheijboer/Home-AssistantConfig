@@ -30,6 +30,7 @@ tts:
     language: 'nl'
 
 #logger:
+#  default: debug
 #  logs:
 #    custom_components.climate.homewizard: debug
 

@@ -1,0 +1,16 @@
+- alias: Notify Brievenbus opened
+  trigger:
+    platform: state
+    entity_id: 
+     - binary_sensor.door_window_sensor_158d0001de760a  #brievenbus
+     # voeg evt meer toe
+    from: 'off'
+    to: 'on'
+#    for:          # avoid double notifications
+#     seconds: 1
+  action:
+    - service: notify.martinenilse
+      data_template:
+        title: '{{ trigger.to_state.attributes.friendly_name }} geopend!'
+        message: >
+                 De post of reclame is bezorgd, want de {{ trigger.to_state.attributes.friendly_name }}is geopend!

@@ -160,6 +160,9 @@ binary_sensor.door_window_sensor_158d0001b7baa0:
 binary_sensor.door_window_sensor_158d0001b91ae0:
   device_class: door
   friendly_name: Schutting Achter
+binary_sensor.door_window_sensor_158d0001de760a:
+  device_class: door
+  friendly_name: Brievenbus
 binary_sensor.door_window_sensor_158d00016c3e09:
   device_class: opening
   friendly_name: Contactsensor
