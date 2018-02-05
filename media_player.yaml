@@ -11,9 +11,6 @@
   name: Denon Receiver
   show_all_sources: False
   timeout: 2
-  #zones:
-  #  - zone: Zone2
-  #    name:
 - platform: ziggo_mediabox_xl
   host: 172.19.3.24
   name: Ziggo Mediabox

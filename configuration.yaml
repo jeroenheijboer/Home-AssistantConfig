@@ -29,10 +29,11 @@ tts:
   - platform: google
     language: 'nl'
 
-#logger:
-#  default: debug
-#  logs:
-#    custom_components.climate.homewizard: debug
+logger:
+ default: warning
+ logs:
+   climate.heatlink: critical
+   custom_components.climate.homewizard: critical
 
 zwave:
   usb_path: /dev/ttyACM1
