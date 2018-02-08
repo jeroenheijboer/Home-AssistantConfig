@@ -1,0 +1,15 @@
+homekit_weltrusten:
+  sequence:
+    - service: homeassistant.turn_off
+      entity_id: 
+      - light.kast #kast lamp
+      - switch.plug_158d00019d43e8 #hoeklamp
+      - switch.plug_158d0001a6592f #keukenlamp
+      - media_player.tv
+      - media_player.denon_receiver
+    - condition: state
+      entity_id: media_player.ziggo_mediabox
+      state: 'playing'
+    - service: homeassistant.turn_off
+      entity_id:
+      - media_player.ziggo_mediabox

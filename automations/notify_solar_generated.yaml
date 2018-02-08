@@ -1,4 +1,5 @@
 - alias: Notify Solar Generated 2KwH
+  initial_state: on
   hide_entity: false
   trigger:
     platform: numeric_state
@@ -11,6 +12,7 @@
           Je hebt al {{ states.sensor.energy_generation.state }}KwH opgewekt!
 
 - alias: Notify Solar Generated 4KwH
+  initial_state: on
   hide_entity: false
   trigger:
     platform: numeric_state
@@ -23,6 +25,7 @@
           Je hebt al {{ states.sensor.energy_generation.state }}KwH opgewekt!
 
 - alias: Notify Solar Generated 10KwH
+  initial_state: on
   hide_entity: false
   trigger:
     platform: numeric_state
@@ -35,6 +38,7 @@
           Je hebt al {{ states.sensor.energy_generation.state }}}KwH opgewekt!
 
 - alias: Notify Solar Generated 14KwH
+  initial_state: on
   hide_entity: false
   trigger:
     platform: numeric_state
@@ -47,6 +51,7 @@
           Woohoo, je hebt al {{ states.sensor.energy_generation.state }}KwH opgewekt!
 
 - alias: Notify Solar Generated 18KwH
+  initial_state: on
   hide_entity: false
   trigger:
     platform: numeric_state
@@ -59,6 +64,7 @@
           Woohoo, je hebt al {{ states.sensor.energy_generation.state }}KwH opgewekt!
 
 - alias: Notify Solar Generated 20KwH
+  initial_state: on
   hide_entity: false
   trigger:
     platform: numeric_state

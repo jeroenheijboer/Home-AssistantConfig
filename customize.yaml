@@ -1,14 +1,14 @@
-media_player.tv:
-  homebridge_media_player_switch: on_off
-  homebridge_visible: true
-media_player.denon_receiver:
-  homebridge_media_player_switch: on_off
-  homebridge_visible: true
-media_player.ziggo_mediabox:
-  homebridge_media_player_switch: on_off
-  homebridge_visible: true
-fan.centrale_afzuiging:
-  homebridge_visible: true
+#media_player.tv:
+#  homebridge_media_player_switch: on_off
+#  homebridge_visible: true
+#media_player.denon_receiver:
+#  homebridge_media_player_switch: on_off
+#  homebridge_visible: true
+#media_player.ziggo_mediabox:
+#  homebridge_media_player_switch: on_off
+#  homebridge_visible: true
+#fan.centrale_afzuiging:
+#  homebridge_visible: true
 light.kast:
   friendly_name: Kast
   icon: mdi:palette
@@ -158,41 +158,24 @@ light.gateway_light_7811dcb23274:
   friendly_name: Xiaomi Gateway Lamp
   icon: mdi:palette
 binary_sensor.door_window_sensor_158d0001a1ecd5:
-  device_class: opening
+  device_class: door
   friendly_name: Voordeur
-  icon: mdi:door
-  homebridge_visible: true
-  homebridge_battery_source: sensor.battery_xiaomi_voordeur
 binary_sensor.door_window_sensor_158d0001dbcc33:
-  device_class: opening
+  device_class: door
   friendly_name: Achterdeur
-  icon: mdi:door
-  homebridge_visible: true
-  homebridge_battery_source: sensor.battery_xiaomi_achterdeur
 binary_sensor.door_window_sensor_158d00016d1372:
-  device_class: opening
+  device_class: door
   friendly_name: Schuur
-  icon: mdi:door
-  homebridge_visible: true
-  homebridge_battery_source: sensor.battery_xiaomi_schuur
 binary_sensor.door_window_sensor_158d0001b7baa0:
-  device_class: opening
+  device_class: door
   friendly_name: Schutting Voor
-  icon: mdi:door
-  homebridge_visible: true
-  homebridge_battery_source: sensor.battery_xiaomi_schutting_voor
 binary_sensor.door_window_sensor_158d0001b91ae0:
-  device_class: opening
+  device_class: door
   friendly_name: Schutting Achter
-  icon: mdi:door
-  homebridge_visible: true
-  homebridge_battery_source: sensor.battery_xiaomi_schutting_achter
 binary_sensor.door_window_sensor_158d0001de760a:
   device_class: opening
   friendly_name: Brievenbus
   icon: mdi:mailbox
-  homebridge_visible: true
-  homebridge_battery_source: sensor.battery_xiaomi_brievenbus
 binary_sensor.door_window_sensor_158d00016c3e09:
   device_class: opening
   friendly_name: Contactsensor
@@ -234,10 +217,16 @@ switch.heatlink_on_off:
   friendly_name: Heatlink Activatie
   icon: mdi:content-duplicate
 sensor.afzuiging_tijd:
- friendly_name: Tijd
- icon: mdi:timer
+  friendly_name: Tijd
+  icon: mdi:timer
 sensor.afzuiging_snelheid:
- friendly_name: Snelheid
- icon: mdi:transfer
+  friendly_name: Snelheid
+  icon: mdi:transfer
 climate.heatlink:
- homebridge_visible: true
+  homebridge_visible: true
+group.group_ventilator:
+  friendly_name: Centrale afzuiging
+script.homekit_weltrusten:
+  homebridge_visible: true
+script.homekit_goedemorgen:
+  homebridge_visible: true

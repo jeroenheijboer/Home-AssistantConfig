@@ -1,4 +1,5 @@
-- alias: 'Lights turn on at sunset' 
+- alias: 'Lights turn on at sunset'
+  initial_state: on
   trigger:
     platform: sun
     event: sunset
@@ -9,7 +10,8 @@
     - switch.plug_158d0001a4ea40  #voordeurlamp
     - switch.plug_158d00019d43e8  #hoeklamp
 
-- alias: 'Lights turn off at sunrise' 
+- alias: 'Lights turn off at sunrise'
+  initial_state: on
   trigger:
     platform: sun
     event: sunrise

@@ -1,5 +1,6 @@
 #### Check Certificate expiration for HA
 - alias: Notify Cert Expires
+  initial_state: on
   trigger:
    platform: numeric_state
    entity_id: sensor.ssl_certificate_expiry

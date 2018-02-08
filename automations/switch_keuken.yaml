@@ -1,4 +1,5 @@
 - alias: Switch Keuken
+  initial_state: on
   trigger:
     - platform: event
       event_type: click
