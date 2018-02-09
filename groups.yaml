@@ -11,6 +11,7 @@ default_view:
  - group.group_lampen
  - group.group_sensoren
  - group.group_overige
+ - group.group_telefoon
  - sun.sun
 
 view_energie:
@@ -139,6 +140,13 @@ group_overige:
  entities:
  - script.notify_manually_travel_to_home
  - switch.sonoff_01
+
+group_telefoon:
+ name: Telefoon
+ control: hidden
+ entities:
+ - sensor.phone
+ - sensor.phone_line_status
 
 group_xiaomi_gateway:
  name: Xiaomi Gateway

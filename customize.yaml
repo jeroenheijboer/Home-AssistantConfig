@@ -7,8 +7,6 @@
 #media_player.ziggo_mediabox:
 #  homebridge_media_player_switch: on_off
 #  homebridge_visible: true
-#fan.centrale_afzuiging:
-#  homebridge_visible: true
 light.kast:
   friendly_name: Kast
   icon: mdi:palette
@@ -230,3 +228,6 @@ script.homekit_weltrusten:
   homebridge_visible: true
 script.homekit_goedemorgen:
   homebridge_visible: true
+sensor.phone:
+  icon: mdi:deskphone
+  friendly_name: Telefoon

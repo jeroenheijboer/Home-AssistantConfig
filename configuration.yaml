@@ -19,6 +19,10 @@ http:
 sun:
 frontend:
 # javascript_version: es5
+ extra_html_url:
+   - /local/custom_ui/fan_model.html
+   - /local/custom_ui/state-card-with-speed.html
+   - /local/custom_ui/state-card-custom_fan.html
 config:
 updater:
  include_used_components: true

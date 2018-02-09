@@ -1,0 +1,21 @@
+- alias: Afzuiging Badkamer luchtvochtigheid
+  initial_state: on
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.humidity_158d0001f2aba5 #badkamer
+    above: 70
+  action:
+   - service: fan.set_speed
+     entity_id: fan.centrale_afzuiging
+     data:
+       speed: high
+   - service: notify.martinenilse
+     data_template:
+       title: 'Centrale afzuiging'
+       message: >
+                De centrale afzuiging is op Hoog gezet ivm luchtvochtigheid badkamer.
+   - delay: 0:29
+   - service: fan.set_speed
+     entity_id: fan.centrale_afzuiging
+     data:
+       speed: low
