@@ -1,0 +1,20 @@
+- alias: Tuinverliching when door opened
+  trigger:
+    platform: state
+    entity_id: 
+     - binary_sensor.door_window_sensor_158d0001b91ae0  #SchuttingAchter
+     - binary_sensor.door_window_sensor_158d0001b7baa0  #SchuttingVoor
+     - binary_sensor.door_window_sensor_158d0001dbcc33  #Achterdeur
+     # voeg evt meer toe
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: sun.sun
+    state: 'below_horizon'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.plug_158d0001a6592f
+    - delay: 0:03
+    - service: switch.turn_off
+      entity_id: switch.plug_158d0001a6592f
