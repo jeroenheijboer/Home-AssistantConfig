@@ -113,6 +113,8 @@ group_lampen:
  - switch.plug_158d00019d43e8
  - switch.plug_158d0001a6592f
  - switch.plug_158d0001a4ea40
+ - switch.plug_158d0001dae65a
+ - switch.plug_158d0001dae512
  - light.gateway_light_7811dcb23274
 
 group_sensoren:

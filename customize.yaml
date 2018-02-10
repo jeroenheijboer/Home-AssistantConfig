@@ -188,6 +188,14 @@ switch.plug_158d0001a6592f:
   friendly_name: Keukenlamp
   icon: mdi:lightbulb-outline
   homebridge_visible: true
+switch.plug_158d0001dae65a:
+  friendly_name: Tuinverlichting
+  icon: mdi:tree
+  homebridge_visible: true
+switch.plug_158d0001dae512:
+  friendly_name: Kerstboom
+  icon: mdi:pine-tree
+  homebridge_visible: true
 sensor.temperature_158d0001f2aba5:
   friendly_name: Badkamer Temperatuur
 sensor.humidity_158d0001f2aba5:
