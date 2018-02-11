@@ -232,6 +232,9 @@ climate.heatlink:
   homebridge_visible: true
 group.group_ventilator:
   friendly_name: Centrale afzuiging
+switch.centrale_afzuiging_30_min:
+  friendly_name: Hoog voor 30 min
+  icon: mdi:clock-end
 script.homekit_weltrusten:
   homebridge_visible: true
 script.homekit_goedemorgen:

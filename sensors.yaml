@@ -1,9 +1,6 @@
 # Pulse sensor water
   - platform: serial
     serial_port: /dev/ttyACM0
-# Slimme meter DSMR
-#  - platform: dsmr
-#    port: /dev/ttyUSB0
 # Weather prediction
   - platform: yr
 # PV Output
@@ -239,6 +236,7 @@
       - type: memory_free
       - type: processor_use
       - type: last_boot
+# HA Internal Database Size
   - platform: command_line
     name: ha_internal_dbsize
     scan_interval:
@@ -246,6 +244,7 @@
     command: "du -m /home/pi/.homeassistant/home-assistant_v2.db | cut -f1"
     unit_of_measurement: 'MB'
     value_template: '{{ value | int - 1 }}'
+# HA Recorder MySQL Database Size
   - platform: sql
     db_url: !secret mysql_db_url
     queries:
@@ -253,20 +252,15 @@
       query: 'SELECT table_schema "homeassistant", Round(Sum(data_length + index_length) / 1024 / 1024, 0) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'
       column: 'value'
       unit_of_measurement: MB
-#  - platform: sql
-#    db_url: !secret dsmr_db_url
-#    queries:
-#    - name: dsmr_dbsize2
-#      query: "SELECT pg_size_pretty(pg_database_size('dsmrreader'));"
-#      column: "value"
-#      unit_of_measurement: MB
-  - platform: command_line
-    name: dsmr_dbsize
-    scan_interval:
-     minutes: 360
-    command: /home/pi/.homeassistant/scripts/check_dsmr_dbsize.sh
-    unit_of_measurement: "MB"
-    value_template: "{{  value | replace ('MB','') | round(0) }}"
+# HA DSMR Database Size
+  - platform: sql
+    db_url: !secret dsmr_db_url
+    queries:
+    - name: dsmr_dbsize
+      query: "SELECT (pg_database_size('dsmrreader')/1024/1024) as db_size;"
+      column: "db_size"
+      unit_of_measurement: MB
+# HA Certficate Expire
   - platform: cert_expiry
     scan_interval:
      minutes: 360

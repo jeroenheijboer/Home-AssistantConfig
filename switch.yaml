@@ -10,6 +10,13 @@
     payload_available: "Online"
     payload_not_available: "Offline"
     retain: true
+  - platform: mqtt
+    name: Centrale Afzuiging 30 min
+    command_topic: "/IthoRemote/Fan/cmd"
+    state_topic : "/IthoRemote/Fan/State"
+    payload_on: "State 33"
+    payload_off: "State 0"
+    optimistic: "true"
   - platform: command_line
     switches:
       heatlink_on_off:

@@ -98,6 +98,7 @@ group_ventilator:
  - fan.centrale_afzuiging
  - sensor.afzuiging_snelheid
  - sensor.afzuiging_tijd
+ - switch.centrale_afzuiging_30_min
 
 group_cameras:
  name: Camera
