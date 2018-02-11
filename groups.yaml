@@ -11,7 +11,6 @@ default_view:
  - group.group_lampen
  - group.group_sensoren
  - group.group_overige
- - group.group_telefoon
  - sun.sun
 
 view_energie:
@@ -123,7 +122,7 @@ group_sensoren:
  - binary_sensor.door_window_sensor_158d0001a1ecd5
  - binary_sensor.door_window_sensor_158d0001dbcc33
  - binary_sensor.door_window_sensor_158d00016d1372
- - binary_sensor.door_window_sensor_158d00016c3e09
+# - binary_sensor.door_window_sensor_158d00016c3e09
  - binary_sensor.door_window_sensor_158d0001b7baa0
  - binary_sensor.door_window_sensor_158d0001b91ae0
  - binary_sensor.door_window_sensor_158d0001de760a
@@ -142,12 +141,6 @@ group_overige:
  entities:
  - script.notify_manually_travel_to_home
  - switch.sonoff_01
-
-group_telefoon:
- name: Telefoon
- control: hidden
- entities:
- - sensor.phone
  - sensor.phone_line_status
 
 group_xiaomi_gateway:
@@ -217,8 +210,8 @@ group_machine_info:
  name: System Info
  entities:
  - sensor.disk_free_
- - sensor.ram_available
- - sensor.cpu_used
+ - sensor.memory_free
+ - sensor.processor_use
  - sensor.last_boot
  - sensor.ha_internal_dbsize
  - sensor.ha_recorder_dbsize

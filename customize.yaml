@@ -236,6 +236,3 @@ script.homekit_weltrusten:
   homebridge_visible: true
 script.homekit_goedemorgen:
   homebridge_visible: true
-sensor.phone:
-  icon: mdi:deskphone
-  friendly_name: Telefoon

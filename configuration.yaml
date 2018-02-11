@@ -38,6 +38,7 @@ logger:
  logs:
    climate.heatlink: critical
    custom_components.climate.homewizard: critical
+   custom_components.climate.heatlink: critical
 
 zwave:
   usb_path: /dev/ttyACM1

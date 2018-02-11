@@ -8,4 +8,6 @@
     entities:
       - device_tracker.iphone_van_ilse
       - device_tracker.iphone_van_martin
+      - sensor.phone_line_status
+
       
