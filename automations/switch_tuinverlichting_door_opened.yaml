@@ -17,6 +17,7 @@
   action:
     - service: switch.turn_on
       entity_id: switch.plug_158d0001dae65a
-    - delay: 0:03
+    - delay:
+        minutes: 3
     - service: switch.turn_off
       entity_id: switch.plug_158d0001dae65a

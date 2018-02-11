@@ -4,6 +4,10 @@
     platform: numeric_state
     entity_id: sensor.humidity_158d0001f2aba5 #badkamer
     above: 70
+  condition:
+    - condition: time
+      after: '07:00:00'
+      before: '21:00:00'
   action:
    - service: fan.set_speed
      entity_id: fan.centrale_afzuiging
@@ -13,7 +17,7 @@
      data_template:
        title: 'Centrale afzuiging'
        message: >
-                De centrale afzuiging is op Hoog gezet ivm luchtvochtigheid badkamer.
+                De centrale afzuiging is 30 min op Hoog gezet ivm luchtvochtigheid badkamer.
    - delay: 0:29
    - service: fan.set_speed
      entity_id: fan.centrale_afzuiging

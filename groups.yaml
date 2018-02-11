@@ -94,6 +94,7 @@ group_klimaat:
 
 group_ventilator:
  name: Centrale afzuizing
+ control: hidden
  entities:
  - fan.centrale_afzuiging
  - sensor.afzuiging_snelheid
